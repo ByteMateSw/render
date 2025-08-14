@@ -1,0 +1,68 @@
+# ===============================================================================
+# .dockerignore - Archivos a excluir del contexto Docker
+# ===============================================================================
+# DESCRIPCIÓN: Optimiza el build excluyendo archivos innecesarios
+# ===============================================================================
+
+# Archivos de documentación y desarrollo
+*.md
+README*
+CHANGELOG*
+LICENSE*
+.git/
+.gitignore
+
+# Logs y archivos temporales (se recrearán en runtime)
+logs/*.log
+logs/*.out
+logs/*.err
+tmp/*
+*.tmp
+*.temp
+
+# Archivos de sistema Windows/Mac/Linux
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Archivos de desarrollo
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Archivos de backup
+*.bak
+*.backup
+*.old
+
+# Archivos compilados locales (se usarán los del JAR)
+*.class
+*.jar.original
+
+# Configuraciones locales que no deben ir al contenedor
+engines/*
+!engines/.gitkeep
+
+# Archivos específicos de desarrollo local
+.env
+.env.local
+*.env.local
+
+# Archivos de muestra que no son necesarios en producción
+samples/*.sql
+samples/*.bak
+
+# Documentación HTML local (no necesaria en servidor)
+doc/html/*
+
+# Cache y archivos temporales de Java
+hs_err_pid*
+*.hprof
+
+# Archivos de configuración específicos del desarrollador
+symmetric-*.properties.bak
+*.properties.local
