@@ -153,7 +153,7 @@ echo "🎯 Iniciando SymmetricDS..."
 echo "⏰ Hora de inicio: \$(date)"
 
 # Usar el script sym con el archivo de configuración
-exec bin/sym --properties-file "\$CONFIG_FILE" --port "\$PORT"
+exec bin/sym_service render-server console
 EOF
 
 # Hacer ejecutable el script de entrada
