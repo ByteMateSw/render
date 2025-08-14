@@ -1,0 +1,65 @@
+# ===============================================================================
+# docker-compose.yml - Para pruebas locales (OPCIONAL)
+# ===============================================================================
+# DESCRIPCIÓN: Archivo para probar SymmetricDS localmente con Docker
+# USO: docker-compose up para probar antes de subir a Render.com
+# ===============================================================================
+
+version: '3.8'
+
+services:
+  # Servicio SymmetricDS para pruebas
+  symmetricds:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # CAMBIAR ESTOS VALORES por tu PostgreSQL real
+      PG_HOST: "tu-postgres-host.com"
+      PG_PORT: "5432"
+      PG_DB: "tu_database"
+      PG_USER: "tu_usuario"
+      PG_PASS: "tu_password"
+      
+      # Variables auto-configuradas
+      PORT: "8080"
+      RENDER_EXTERNAL_URL: "http://localhost:8080"
+      
+      # Configuración Java
+      JAVA_OPTS: "-Xmx512m -Xms256m -Djava.awt.headless=true"
+    
+    # Volúmenes para desarrollo (opcional)
+    volumes:
+      - ./logs:/app/logs
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/sync/supabase-server"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Restart policy
+    restart: unless-stopped
+
+# ===============================================================================
+# COMANDOS ÚTILES:
+# ===============================================================================
+#
+# # Construir y ejecutar
+# docker-compose up --build
+#
+# # Ejecutar en background
+# docker-compose up -d
+#
+# # Ver logs
+# docker-compose logs -f
+#
+# # Parar servicios
+# docker-compose down
+#
+# # Test de conectividad
+# curl http://localhost:8080/sync/supabase-server
+#
+# ===============================================================================

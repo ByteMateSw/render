@@ -19,6 +19,7 @@ ENV JAVA_OPTS="-Xmx1024m -Xms512m -Djava.awt.headless=true"
 ENV SYMMETRIC_HOME="/app"
 ENV SYMMETRIC_ENGINE="config_sync/engines/render-server.properties"
 ENV PORT=8080
+ENV PG_PORT=5432
 
 # Instalar dependencias del sistema necesarias
 RUN apt-get update && apt-get install -y \
@@ -61,40 +62,98 @@ echo "🚀 Iniciando SymmetricDS Master Node..."
 echo "📅 Fecha: \$(date)"
 echo "🔧 Java Version: \$(java -version 2>&1 | head -n1)"
 echo "💾 Memoria disponible: \$(free -h | grep Mem | awk '{print \$2}')"
-echo "🌐 Variables de entorno:"
-echo "   - SYMMETRIC_HOME: \$SYMMETRIC_HOME"
-echo "   - SYMMETRIC_ENGINE: \$SYMMETRIC_ENGINE"
-echo "   - PORT: \$PORT"
-echo "   - JAVA_OPTS: \$JAVA_OPTS"
 
-# Verificar que existe el archivo de configuración
-if [ ! -f "\$SYMMETRIC_ENGINE" ]; then
-    echo "❌ ERROR: No se encontró el archivo de configuración: \$SYMMETRIC_ENGINE"
-    echo "📁 Archivos disponibles en config_sync/engines/:"
-    ls -la config_sync/engines/ 2>/dev/null || echo "   Directorio no encontrado"
+# Verificar variables críticas
+if [ -z "\$PG_HOST" ] || [ -z "\$PG_USER" ] || [ -z "\$PG_PASS" ]; then
+    echo "❌ ERROR: Variables de entorno de PostgreSQL no configuradas"
+    echo "   Necesitas configurar: PG_HOST, PG_USER, PG_PASS, PG_DB"
     exit 1
 fi
 
-echo "✅ Archivo de configuración encontrado: \$SYMMETRIC_ENGINE"
+echo "🌐 Variables de entorno configuradas:"
+echo "   - PG_HOST: \$PG_HOST"
+echo "   - PG_PORT: \$PG_PORT"
+echo "   - PG_DB: \$PG_DB"
+echo "   - PG_USER: \$PG_USER"
+echo "   - PORT: \$PORT"
+echo "   - RENDER_EXTERNAL_URL: \$RENDER_EXTERNAL_URL"
 
-# Verificar conectividad de base de datos (opcional)
-echo "🔍 Verificando configuración de base de datos..."
-grep -E "^db\.(url|user)" "\$SYMMETRIC_ENGINE" | head -2 || echo "⚠️  No se pudieron leer configuraciones de DB"
+# Crear archivo de configuración dinámico
+CONFIG_FILE="/tmp/render-server.properties"
+echo "🔧 Generando configuración dinámica en \$CONFIG_FILE..."
 
-# Mostrar configuración de sync.url
-echo "🌐 URL de sincronización configurada:"
-grep "^sync.url" "\$SYMMETRIC_ENGINE" || echo "⚠️  sync.url no configurada"
+cat > "\$CONFIG_FILE" <<CONFIGEOF
+engine.name=render-server
+group.id=server
+external.id=server-001
+sync.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
 
-# Crear logs iniciales
+db.driver=org.postgresql.Driver
+db.url=jdbc:postgresql://\${PG_HOST}:\${PG_PORT}/\${PG_DB}?sslmode=require&ssl=true
+db.user=\${PG_USER}
+db.password=\${PG_PASS}
+
+db.pool.initial.size=3
+db.pool.max.size=20
+db.pool.min.idle=2
+db.pool.max.idle=8
+db.pool.max.wait=30000
+db.pool.test.on.borrow=true
+db.pool.test.while.idle=true
+db.pool.validation.query=select 1
+
+auto.registration=false
+start.route.job=true
+start.outgoing.batches.job=true
+start.incoming.batches.job=true
+start.statistics.job=true
+start.synctriggers.job=true
+start.push.job=true
+start.pull.job=true
+start.heartbeat.job=true
+start.purge.job=true
+
+job.routing.period.time.ms=5000
+job.outgoing.batches.period.time.ms=5000
+job.incoming.batches.period.time.ms=5000
+job.push.period.time.ms=10000
+job.pull.period.time.ms=10000
+job.heartbeat.period.time.ms=30000
+
+web.enable=true
+web.http.port=\${PORT}
+web.context.path=/sync
+web.base.url=\${RENDER_EXTERNAL_URL}
+
+log.level=INFO
+console.log.level=INFO
+auto.config.database=true
+auto.config.registration=true
+CONFIGEOF
+
+echo "✅ Configuración creada exitosamente"
+
+# Mostrar resumen
+echo "🔍 Resumen de configuración:"
+echo "   - Base de datos: \$PG_HOST:\$PG_PORT/\$PG_DB"
+echo "   - Usuario DB: \$PG_USER"
+echo "   - Puerto web: \$PORT"
+echo "   - URL sync: \$RENDER_EXTERNAL_URL/sync/supabase-server"
+
+# Configurar entorno de SymmetricDS
+export SYM_HOME="/app"
+export JAVA_HOME="\$(dirname \$(dirname \$(readlink -f \$(which java))))"
+
+# Crear directorio de logs
+mkdir -p logs
 touch logs/symmetric.log
-echo "📝 Log iniciado en \$(date)" >> logs/symmetric.log
 
-# Iniciar SymmetricDS en modo foreground para Render.com
-echo "🎯 Ejecutando comando: bin/sym_service -engine \$SYMMETRIC_ENGINE start"
-echo "⏰ Iniciando en \$(date)..."
+# Iniciar SymmetricDS directamente
+echo "🎯 Iniciando SymmetricDS..."
+echo "⏰ Hora de inicio: \$(date)"
 
-# Ejecutar SymmetricDS
-exec bin/sym_service -engine "\$SYMMETRIC_ENGINE" start
+# Usar el script sym con el archivo de configuración
+exec bin/sym --properties-file "\$CONFIG_FILE" --port "\$PORT"
 EOF
 
 # Hacer ejecutable el script de entrada
@@ -107,22 +166,27 @@ ENTRYPOINT ["/app/docker-entrypoint.sh"]
 # NOTAS PARA RENDER.COM:
 # ===============================================================================
 # 
-# 1. VARIABLES DE ENTORNO A CONFIGURAR EN RENDER.COM:
-#    - PG_HOST: Host de PostgreSQL
+# 1. VARIABLES DE ENTORNO OBLIGATORIAS EN RENDER.COM:
+#    - PG_HOST: Host de PostgreSQL (ej: db.xxx.supabase.co)
 #    - PG_PORT: Puerto de PostgreSQL (default: 5432)
 #    - PG_DB: Nombre de la base de datos
 #    - PG_USER: Usuario de PostgreSQL
 #    - PG_PASS: Password de PostgreSQL
-#    - JAVA_OPTS: Opciones de JVM (default: -Xmx1024m -Xms512m)
 #
-# 2. CONFIGURACIÓN DEL SERVICIO EN RENDER.COM:
-#    - Build Command: docker build -t symmetricds .
-#    - Start Command: [se usa ENTRYPOINT del Dockerfile]
-#    - Port: 8080
+# 2. VARIABLES OPCIONALES:
+#    - JAVA_OPTS: Opciones de JVM (default: -Xmx1024m -Xms512m)
+#    - PORT: Puerto web (auto-configurado por Render.com)
+#    - RENDER_EXTERNAL_URL: URL externa (auto-configurada por Render.com)
+#
+# 3. CONFIGURACIÓN DEL SERVICIO EN RENDER.COM:
+#    - Environment: Docker
+#    - Build Command: [automático]
+#    - Start Command: [automático - usa ENTRYPOINT]
 #    - Health Check Path: /sync/supabase-server
 #
-# 3. ANTES DE HACER BUILD:
-#    Asegúrate de personalizar config_sync/engines/supabase-server.properties
-#    con las variables de entorno correctas
+# 4. DESPUÉS DEL DEPLOY:
+#    - URL será: https://tu-app.onrender.com
+#    - Endpoint sync: https://tu-app.onrender.com/sync/supabase-server
+#    - Ejecutar scripts SQL en PostgreSQL en el orden correcto
 #
 # ===============================================================================
