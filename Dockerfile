@@ -23,7 +23,7 @@ WORKDIR /app
 # Copiar archivos
 COPY . .
 
-# Permisos y directorios
+# Permisos
 RUN chmod +x bin/* && \
     mkdir -p logs tmp engines security
 
@@ -45,6 +45,7 @@ echo "✅ Variables configuradas:"
 echo "   - PG_HOST: \$PG_HOST"
 echo "   - PG_USER: \$PG_USER"
 echo "   - PORT: \$PORT"
+echo "   - RENDER_EXTERNAL_URL: \$RENDER_EXTERNAL_URL"
 
 # Crear configuración
 CONFIG_FILE="/app/engines/render-server.properties"
@@ -52,9 +53,10 @@ mkdir -p /app/engines
 
 cat > "\$CONFIG_FILE" << CONFIG_EOF
 engine.name=render-server
-group.id=server
-external.id=server-001
-sync.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
+group.id=master
+external.id=supabase-001
+sync.url=\${RENDER_EXTERNAL_URL}/sync/render-server
+registration.url=\${RENDER_EXTERNAL_URL}/sync/render-server
 
 db.driver=org.postgresql.Driver
 db.url=jdbc:postgresql://\${PG_HOST}:\${PG_PORT}/\${PG_DB}?sslmode=require&ssl=true&connectTimeout=30&socketTimeout=60
@@ -103,6 +105,7 @@ bin/symadmin --engine render-server create-sym-tables 2>/dev/null || echo "Tabla
 echo "🚀 Iniciando servicio SymmetricDS..."
 # Usar sym directamente
 exec bin/sym --engine render-server --port \${PORT}
+
 EOF
 
 # Hacer ejecutable
@@ -113,7 +116,7 @@ EXPOSE 8080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
-    CMD curl -f http://localhost:$PORT/sync/supabase-server || exit 1
+    CMD curl -f http://localhost:$PORT/sync/render-server || exit 1
 
 # Punto de entrada
 ENTRYPOINT ["/app/docker-entrypoint.sh"]

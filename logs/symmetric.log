@@ -1,0 +1,1100 @@
+2025-08-14 21:17:10,902 INFO [startup] [AbstractCommandLauncher] [main] Command: {}
+2025-08-14 21:17:10,928 INFO [startup] [AbstractCommandLauncher] [main] Option: name=engine, value={sucursal-001}
+2025-08-14 21:17:10,929 INFO [startup] [AbstractCommandLauncher] [main] Option: name=port, value={8081}
+2025-08-14 21:17:11,900 INFO [startup] [SymmetricUtils] [main] 
+   _____                              __       _       ____   _____
+  / ___/ __  _____ __  ___ __  ___  _/ /_ ____(_)___  / __ | / ___/
+  \__ \ / / / / _ `_ \/ _ `_ \/ _ \/_ __// __/ / __/ / / / / \__ \ 
+ ___/ // /_/ / // // / // // /  __// /  / / / / /_  / /_/ / ___/ / 
+/____/ \__  /_//_//_/_//_//_/\___/ \_/ /_/ /_/\__/ /_____/ /____/  
+      /____/                                                        
++-----------------------------------------------------------------+
+| Copyright (C) 2007-2025 JumpMind, Inc.                          |
+|                                                                 |
+| Licensed under the GNU General Public License version 3.        |
+| This software comes with ABSOLUTELY NO WARRANTY.                |
+| See http://www.gnu.org/licenses/gpl.html                        |
++-----------------------------------------------------------------+
+2025-08-14 21:17:11,907 INFO [startup] [SymmetricWebServer] [main] About to start SymmetricDS web server on 0.0.0.0:8081:HTTP/1.1 with context path /
+2025-08-14 21:17:13,871 INFO [startup] [SymmetricLauncher] [main] Starting SymmetricLauncher v3.16.5 using Java 24.0.2 with PID 15592 (C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\web\WEB-INF\lib\symmetric-server-3.16.5.jar started by Estudiante in C:\Users\Estudiante\Desktop\symmetric-server-3.16.5)
+2025-08-14 21:17:14,041 INFO [startup] [SymmetricLauncher] [main] No active profile set, falling back to 1 default profile: "default"
+2025-08-14 21:17:21,871 INFO [startup] [SymmetricEngineHolder] [main] Current directory is C:\Users\Estudiante\Desktop\symmetric-server-3.16.5
+2025-08-14 21:17:21,874 INFO [startup] [SymmetricEngineHolder] [main] Starting in single-server mode
+2025-08-14 21:17:22,398 INFO [sucursal-001] [ClientSymmetricEngine] [symmetric-engine-startup-1] Initializing connection to database
+2025-08-14 21:17:26,593 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] Detected database 'MySQL', version '8, minor version '0', protocol 'mysql'
+2025-08-14 21:17:27,511 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] The IDatabasePlatform being used is org.jumpmind.db.platform.mysql.MySqlDatabasePlatform
+2025-08-14 21:17:27,969 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] The DbDialect being used is org.jumpmind.symmetric.db.mysql.MySqlSymmetricDialect
+2025-08-14 21:17:28,075 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] The staging directory was initialized at the following location: C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\tmp\sucursal-001
+2025-08-14 21:17:28,426 INFO [startup] [SymmetricLauncher] [main] Started SymmetricLauncher in 16.178 seconds (process running for 22.842)
+2025-08-14 21:17:31,453 INFO [sucursal-001] [ClientExtensionService] [symmetric-engine-startup-1] Found 7 extension points from spring that will be registered
+2025-08-14 21:17:31,644 WARN [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Unable to compare SymmetricDS startup database parameters! Assuming there are differences. StackTraceKey.init [SqlException:752351783] org.jumpmind.db.sql.SqlException: Table 'sucursal_001.sym_context' doesn't exist
+	at org.jumpmind.db.sql.AbstractSqlTemplate.translate(AbstractSqlTemplate.java:308)
+	at org.jumpmind.db.sql.AbstractSqlTemplate.translate(AbstractSqlTemplate.java:297)
+	at org.jumpmind.db.sql.JdbcSqlTemplate.execute(JdbcSqlTemplate.java:506)
+	at org.jumpmind.db.sql.JdbcSqlTemplate.queryForObject(JdbcSqlTemplate.java:172)
+	at org.jumpmind.db.sql.AbstractSqlTemplate.queryForString(AbstractSqlTemplate.java:48)
+	at org.jumpmind.symmetric.service.impl.ContextService.getString(ContextService.java:65)
+	at org.jumpmind.symmetric.AbstractSymmetricEngine.detectStartupDbParametersDifferentFromLastStart(AbstractSymmetricEngine.java:1504)
+	at org.jumpmind.symmetric.AbstractSymmetricEngine.setup(AbstractSymmetricEngine.java:442)
+	at org.jumpmind.symmetric.AbstractSymmetricEngine.start(AbstractSymmetricEngine.java:658)
+	at org.jumpmind.symmetric.AbstractSymmetricEngine.start(AbstractSymmetricEngine.java:645)
+	at org.jumpmind.symmetric.ClientSymmetricEngine.start(ClientSymmetricEngine.java:253)
+	at org.jumpmind.symmetric.web.SymmetricEngineStarter.run(SymmetricEngineStarter.java:42)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1095)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'sucursal_001.sym_context' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:113)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1004)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:123)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:123)
+	at org.jumpmind.db.sql.JdbcSqlTemplate$1.execute(JdbcSqlTemplate.java:183)
+	at org.jumpmind.db.sql.JdbcSqlTemplate.execute(JdbcSqlTemplate.java:504)
+	... 12 more
+
+2025-08-14 21:17:31,695 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Initializing SymmetricDS database
+2025-08-14 21:17:31,697 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Checking tables and objects. force=true
+2025-08-14 21:17:31,820 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] Installing SymmetricDS database object:
+create function sym_transaction_id_post_5_7_6()                                                                                           
+ returns varchar(50) NOT DETERMINISTIC READS SQL DATA                                                                            
+ begin                                                                                                                           
+    declare done int default 0;                                                                                                  
+    declare comm_value varchar(50);                                                                                              
+    declare comm_cur cursor for select TRX_ID from INFORMATION_SCHEMA.INNODB_TRX where TRX_MYSQL_THREAD_ID = CONNECTION_ID();    
+    declare continue handler for not found set done = 1;                                                                         
+    open comm_cur;                                                                                                               
+    fetch comm_cur into comm_value;                                                                                              
+    close comm_cur;                                                                                                              
+    return concat(concat(connection_id(), '.'), comm_value);                                                                     
+ end                                                                                                                             
+2025-08-14 21:17:31,895 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] Just installed sym_transaction_id_post_5_7_6
+2025-08-14 21:17:31,928 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] Checking if SymmetricDS tables need created or altered
+2025-08-14 21:17:32,520 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_channel needs to be added
+2025-08-14 21:17:32,531 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_conflict needs to be added
+2025-08-14 21:17:32,537 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_context needs to be added
+2025-08-14 21:17:32,540 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data needs to be added
+2025-08-14 21:17:32,541 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data_event needs to be added
+2025-08-14 21:17:32,542 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data_gap needs to be added
+2025-08-14 21:17:32,542 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_extension needs to be added
+2025-08-14 21:17:32,543 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_extract_request needs to be added
+2025-08-14 21:17:32,543 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_incoming needs to be added
+2025-08-14 21:17:32,543 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_snapshot needs to be added
+2025-08-14 21:17:32,544 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_trigger needs to be added
+2025-08-14 21:17:32,545 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_trigger_router needs to be added
+2025-08-14 21:17:32,546 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_grouplet needs to be added
+2025-08-14 21:17:32,554 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_grouplet_link needs to be added
+2025-08-14 21:17:32,555 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_incoming_batch needs to be added
+2025-08-14 21:17:32,574 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_incoming_error needs to be added
+2025-08-14 21:17:32,576 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_job needs to be added
+2025-08-14 21:17:32,577 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_load_filter needs to be added
+2025-08-14 21:17:32,578 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_lock needs to be added
+2025-08-14 21:17:32,580 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node needs to be added
+2025-08-14 21:17:32,582 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_channel_ctl needs to be added
+2025-08-14 21:17:32,594 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_communication needs to be added
+2025-08-14 21:17:32,597 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group needs to be added
+2025-08-14 21:17:32,598 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group_channel_wnd needs to be added
+2025-08-14 21:17:32,598 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group_link needs to be added
+2025-08-14 21:17:32,604 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host needs to be added
+2025-08-14 21:17:32,607 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_channel_stats needs to be added
+2025-08-14 21:17:32,609 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_job_stats needs to be added
+2025-08-14 21:17:32,610 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_stats needs to be added
+2025-08-14 21:17:32,611 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_identity needs to be added
+2025-08-14 21:17:32,612 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_security needs to be added
+2025-08-14 21:17:32,620 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_outgoing_batch needs to be added
+2025-08-14 21:17:32,622 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_outgoing_error needs to be added
+2025-08-14 21:17:32,626 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_parameter needs to be added
+2025-08-14 21:17:32,627 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_registration_redirect needs to be added
+2025-08-14 21:17:32,628 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_registration_request needs to be added
+2025-08-14 21:17:32,628 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_router needs to be added
+2025-08-14 21:17:32,629 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_sequence needs to be added
+2025-08-14 21:17:32,629 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_table_reload_request needs to be added
+2025-08-14 21:17:32,631 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_table_reload_status needs to be added
+2025-08-14 21:17:32,640 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_transform_column needs to be added
+2025-08-14 21:17:32,642 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_transform_table needs to be added
+2025-08-14 21:17:32,646 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger needs to be added
+2025-08-14 21:17:32,655 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_hist needs to be added
+2025-08-14 21:17:32,659 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_router needs to be added
+2025-08-14 21:17:32,661 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_router_grouplet needs to be added
+2025-08-14 21:17:33,075 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_channel needs to be added
+2025-08-14 21:17:33,076 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_conflict needs to be added
+2025-08-14 21:17:33,077 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_context needs to be added
+2025-08-14 21:17:33,077 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data needs to be added
+2025-08-14 21:17:33,077 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data_event needs to be added
+2025-08-14 21:17:33,078 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_data_gap needs to be added
+2025-08-14 21:17:33,078 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_extension needs to be added
+2025-08-14 21:17:33,079 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_extract_request needs to be added
+2025-08-14 21:17:33,079 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_incoming needs to be added
+2025-08-14 21:17:33,080 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_snapshot needs to be added
+2025-08-14 21:17:33,080 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_trigger needs to be added
+2025-08-14 21:17:33,080 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_file_trigger_router needs to be added
+2025-08-14 21:17:33,085 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_grouplet needs to be added
+2025-08-14 21:17:33,086 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_grouplet_link needs to be added
+2025-08-14 21:17:33,087 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_incoming_batch needs to be added
+2025-08-14 21:17:33,087 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_incoming_error needs to be added
+2025-08-14 21:17:33,088 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_job needs to be added
+2025-08-14 21:17:33,088 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_load_filter needs to be added
+2025-08-14 21:17:33,089 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_lock needs to be added
+2025-08-14 21:17:33,091 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node needs to be added
+2025-08-14 21:17:33,093 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_channel_ctl needs to be added
+2025-08-14 21:17:33,096 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_communication needs to be added
+2025-08-14 21:17:33,097 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group needs to be added
+2025-08-14 21:17:33,102 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group_channel_wnd needs to be added
+2025-08-14 21:17:33,103 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_group_link needs to be added
+2025-08-14 21:17:33,105 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host needs to be added
+2025-08-14 21:17:33,107 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_channel_stats needs to be added
+2025-08-14 21:17:33,109 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_job_stats needs to be added
+2025-08-14 21:17:33,110 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_host_stats needs to be added
+2025-08-14 21:17:33,112 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_identity needs to be added
+2025-08-14 21:17:33,121 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_node_security needs to be added
+2025-08-14 21:17:33,126 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_outgoing_batch needs to be added
+2025-08-14 21:17:33,128 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_outgoing_error needs to be added
+2025-08-14 21:17:33,129 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_parameter needs to be added
+2025-08-14 21:17:33,130 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_registration_redirect needs to be added
+2025-08-14 21:17:33,130 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_registration_request needs to be added
+2025-08-14 21:17:33,130 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_router needs to be added
+2025-08-14 21:17:33,131 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_sequence needs to be added
+2025-08-14 21:17:33,131 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_table_reload_request needs to be added
+2025-08-14 21:17:33,140 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_table_reload_status needs to be added
+2025-08-14 21:17:33,142 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_transform_column needs to be added
+2025-08-14 21:17:33,143 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_transform_table needs to be added
+2025-08-14 21:17:33,145 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger needs to be added
+2025-08-14 21:17:33,151 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_hist needs to be added
+2025-08-14 21:17:33,154 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_router needs to be added
+2025-08-14 21:17:33,158 INFO [sucursal-001] [ModelComparator] [symmetric-engine-startup-1] Table sym_trigger_router_grouplet needs to be added
+2025-08-14 21:17:33,228 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] There are SymmetricDS tables that needed altered
+2025-08-14 21:17:33,238 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_channel`(
+    `channel_id` VARCHAR(128) NOT NULL,
+    `processing_order` INTEGER DEFAULT 1 NOT NULL,
+    `max_batch_size` INTEGER DEFAULT 1000 NOT NULL,
+    `max_batch_to_send` INTEGER DEFAULT 60 NOT NULL,
+    `max_data_to_route` INTEGER DEFAULT 100000 NOT NULL,
+    `extract_period_millis` INTEGER DEFAULT 0 NOT NULL,
+    `enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `use_old_data_to_route` SMALLINT DEFAULT 1 NOT NULL,
+    `use_row_data_to_route` SMALLINT DEFAULT 1 NOT NULL,
+    `use_pk_data_to_route` SMALLINT DEFAULT 1 NOT NULL,
+    `reload_flag` SMALLINT DEFAULT 0 NOT NULL,
+    `file_sync_flag` SMALLINT DEFAULT 0 NOT NULL,
+    `contains_big_lob` SMALLINT DEFAULT 0 NOT NULL,
+    `batch_algorithm` VARCHAR(50) DEFAULT 'default' NOT NULL,
+    `data_loader_type` VARCHAR(50) DEFAULT 'default' NOT NULL,
+    `description` VARCHAR(255) NULL,
+    `queue` VARCHAR(25) DEFAULT 'default' NOT NULL,
+    `max_network_kbps` DECIMAL(10,3) DEFAULT 0.000 NOT NULL,
+    `data_event_action` CHAR(1) NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`channel_id`)
+)
+2025-08-14 21:17:33,327 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_conflict`(
+    `conflict_id` VARCHAR(50) NOT NULL,
+    `source_node_group_id` VARCHAR(50) NOT NULL,
+    `target_node_group_id` VARCHAR(50) NOT NULL,
+    `target_channel_id` VARCHAR(128) NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NULL,
+    `detect_type` VARCHAR(128) NOT NULL,
+    `detect_expression` MEDIUMTEXT NULL,
+    `resolve_type` VARCHAR(128) NOT NULL,
+    `ping_back` VARCHAR(128) NOT NULL,
+    `resolve_changes_only` SMALLINT DEFAULT 0 NULL,
+    `resolve_row_only` SMALLINT DEFAULT 0 NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`conflict_id`)
+)
+2025-08-14 21:17:33,376 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_context`(
+    `name` VARCHAR(80) NOT NULL,
+    `context_value` MEDIUMTEXT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`name`)
+)
+2025-08-14 21:17:33,434 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_data`(
+    `data_id` BIGINT NOT NULL AUTO_INCREMENT,
+    `table_name` VARCHAR(255) NOT NULL,
+    `event_type` CHAR(1) NOT NULL,
+    `row_data` MEDIUMTEXT NULL,
+    `pk_data` MEDIUMTEXT NULL,
+    `old_data` MEDIUMTEXT NULL,
+    `trigger_hist_id` INTEGER NOT NULL,
+    `channel_id` VARCHAR(128) NULL,
+    `transaction_id` VARCHAR(255) NULL,
+    `source_node_id` VARCHAR(50) NULL,
+    `external_data` VARCHAR(50) NULL,
+    `node_list` VARCHAR(255) NULL,
+    `is_prerouted` SMALLINT DEFAULT 0 NOT NULL,
+    `create_time` DATETIME NULL,
+    PRIMARY KEY (`data_id`)
+)
+2025-08-14 21:17:33,494 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE UNIQUE INDEX `sym_idx_d_channel_id` ON `sym_data` (`data_id`, `channel_id`)
+2025-08-14 21:17:33,619 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_data_event`(
+    `data_id` BIGINT NOT NULL,
+    `batch_id` BIGINT NOT NULL,
+    `create_time` DATETIME NULL,
+    PRIMARY KEY (`data_id`, `batch_id`)
+)
+2025-08-14 21:17:33,651 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_de_batchid` ON `sym_data_event` (`batch_id`)
+2025-08-14 21:17:33,708 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_data_gap`(
+    `start_id` BIGINT NOT NULL,
+    `end_id` BIGINT NOT NULL,
+    `is_expired` SMALLINT DEFAULT 0 NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_hostname` VARCHAR(255) NULL,
+    PRIMARY KEY (`start_id`, `end_id`)
+)
+2025-08-14 21:17:33,786 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_extension`(
+    `extension_id` VARCHAR(50) NOT NULL,
+    `extension_type` VARCHAR(10) NOT NULL,
+    `interface_name` VARCHAR(255) NULL,
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `extension_order` INTEGER DEFAULT 1 NOT NULL,
+    `extension_text` MEDIUMTEXT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`extension_id`)
+)
+2025-08-14 21:17:33,912 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_extract_request`(
+    `request_id` BIGINT NOT NULL,
+    `source_node_id` VARCHAR(50) DEFAULT 'default' NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `queue` VARCHAR(128) NULL,
+    `status` CHAR(2) NULL,
+    `start_batch_id` BIGINT NOT NULL,
+    `end_batch_id` BIGINT NOT NULL,
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `load_id` BIGINT NULL,
+    `table_name` VARCHAR(255) NULL,
+    `extracted_rows` BIGINT DEFAULT 0 NOT NULL,
+    `extracted_millis` BIGINT DEFAULT 0 NOT NULL,
+    `transferred_rows` BIGINT DEFAULT 0 NOT NULL,
+    `transferred_millis` BIGINT DEFAULT 0 NOT NULL,
+    `last_transferred_batch_id` BIGINT NULL,
+    `loaded_rows` BIGINT DEFAULT 0 NOT NULL,
+    `loaded_millis` BIGINT DEFAULT 0 NOT NULL,
+    `last_loaded_batch_id` BIGINT NULL,
+    `total_rows` BIGINT NULL,
+    `loaded_time` DATETIME NULL,
+    `parent_request_id` BIGINT DEFAULT 0 NOT NULL,
+    `extract_thread_id` INTEGER NULL,
+    `load_thread_id` INTEGER NULL,
+    `last_update_time` DATETIME NULL,
+    `create_time` DATETIME NULL,
+    `bulk_rows_loaded` BIGINT DEFAULT 0 NULL,
+    PRIMARY KEY (`request_id`, `source_node_id`)
+)
+2025-08-14 21:17:33,978 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_er_ld_src_nd` ON `sym_extract_request` (`load_id`, `source_node_id`)
+2025-08-14 21:17:34,041 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_er_src_nd_st` ON `sym_extract_request` (`source_node_id`, `status`)
+2025-08-14 21:17:34,109 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_file_incoming`(
+    `relative_dir` VARCHAR(255) NOT NULL,
+    `file_name` VARCHAR(260) NOT NULL,
+    `last_event_type` CHAR(1) NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `file_modified_time` BIGINT NULL,
+    PRIMARY KEY (`relative_dir`, `file_name`)
+)
+2025-08-14 21:17:34,160 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_file_snapshot`(
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `relative_dir` VARCHAR(255) NOT NULL,
+    `file_name` VARCHAR(260) NOT NULL,
+    `channel_id` VARCHAR(128) DEFAULT 'filesync' NOT NULL,
+    `reload_channel_id` VARCHAR(128) DEFAULT 'filesync_reload' NOT NULL,
+    `last_event_type` CHAR(1) NOT NULL,
+    `crc32_checksum` BIGINT NULL,
+    `file_size` BIGINT NULL,
+    `file_modified_time` BIGINT NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `create_time` DATETIME NOT NULL,
+    PRIMARY KEY (`trigger_id`, `router_id`, `relative_dir`, `file_name`)
+)
+2025-08-14 21:17:34,244 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_f_snpsht_chid` ON `sym_file_snapshot` (`reload_channel_id`)
+2025-08-14 21:17:34,285 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_file_trigger`(
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `channel_id` VARCHAR(128) DEFAULT 'filesync' NOT NULL,
+    `reload_channel_id` VARCHAR(128) DEFAULT 'filesync_reload' NOT NULL,
+    `base_dir` VARCHAR(255) NOT NULL,
+    `recurse` SMALLINT DEFAULT 1 NOT NULL,
+    `includes_files` VARCHAR(255) NULL,
+    `excludes_files` VARCHAR(255) NULL,
+    `sync_on_create` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_modified` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_delete` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_ctl_file` SMALLINT DEFAULT 0 NOT NULL,
+    `delete_after_sync` SMALLINT DEFAULT 0 NOT NULL,
+    `before_copy_script` MEDIUMTEXT NULL,
+    `after_copy_script` MEDIUMTEXT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`trigger_id`)
+)
+2025-08-14 21:17:34,358 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_file_trigger_router`(
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `initial_load_enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `target_base_dir` VARCHAR(255) NULL,
+    `conflict_strategy` VARCHAR(128) DEFAULT 'source_wins' NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`trigger_id`, `router_id`)
+)
+2025-08-14 21:17:34,440 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_grouplet`(
+    `grouplet_id` VARCHAR(50) NOT NULL,
+    `grouplet_link_policy` CHAR(1) DEFAULT 'I' NOT NULL,
+    `description` VARCHAR(255) NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`grouplet_id`)
+)
+2025-08-14 21:17:34,485 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_grouplet_link`(
+    `grouplet_id` VARCHAR(50) NOT NULL,
+    `external_id` VARCHAR(255) NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`grouplet_id`, `external_id`)
+)
+2025-08-14 21:17:34,535 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_incoming_batch`(
+    `batch_id` BIGINT NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `channel_id` VARCHAR(128) NULL,
+    `status` CHAR(2) NULL,
+    `error_flag` SMALLINT DEFAULT 0 NULL,
+    `sql_state` VARCHAR(10) NULL,
+    `sql_code` INTEGER DEFAULT 0 NOT NULL,
+    `sql_message` MEDIUMTEXT NULL,
+    `last_update_hostname` VARCHAR(255) NULL,
+    `last_update_time` DATETIME NULL,
+    `create_time` DATETIME NULL,
+    `summary` VARCHAR(255) NULL,
+    `ignore_count` INTEGER DEFAULT 0 NOT NULL,
+    `byte_count` BIGINT DEFAULT 0 NOT NULL,
+    `load_flag` SMALLINT DEFAULT 0 NULL,
+    `extract_count` INTEGER DEFAULT 0 NOT NULL,
+    `sent_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_count` INTEGER DEFAULT 0 NOT NULL,
+    `reload_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `other_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `network_millis` INTEGER DEFAULT 0 NOT NULL,
+    `filter_millis` INTEGER DEFAULT 0 NOT NULL,
+    `load_millis` INTEGER DEFAULT 0 NOT NULL,
+    `router_millis` INTEGER DEFAULT 0 NOT NULL,
+    `extract_millis` INTEGER DEFAULT 0 NOT NULL,
+    `transform_extract_millis` INTEGER DEFAULT 0 NOT NULL,
+    `transform_load_millis` INTEGER DEFAULT 0 NOT NULL,
+    `load_id` BIGINT NULL,
+    `common_flag` SMALLINT DEFAULT 0 NULL,
+    `fallback_insert_count` INTEGER DEFAULT 0 NOT NULL,
+    `fallback_update_count` INTEGER DEFAULT 0 NOT NULL,
+    `conflict_win_count` INTEGER DEFAULT 0 NOT NULL,
+    `conflict_lose_count` INTEGER DEFAULT 0 NOT NULL,
+    `ignore_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `missing_delete_count` INTEGER DEFAULT 0 NOT NULL,
+    `skip_count` INTEGER DEFAULT 0 NOT NULL,
+    `failed_row_number` INTEGER DEFAULT 0 NOT NULL,
+    `failed_line_number` INTEGER DEFAULT 0 NOT NULL,
+    `failed_data_id` BIGINT DEFAULT 0 NOT NULL,
+    `bulk_loader_flag` SMALLINT DEFAULT 0 NULL,
+    PRIMARY KEY (`batch_id`, `node_id`)
+)
+2025-08-14 21:17:34,639 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_ib_time_status` ON `sym_incoming_batch` (`create_time`, `status`)
+2025-08-14 21:17:34,687 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_ib_in_error` ON `sym_incoming_batch` (`error_flag`)
+2025-08-14 21:17:34,735 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_incoming_error`(
+    `batch_id` BIGINT NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `failed_row_number` BIGINT NOT NULL,
+    `failed_line_number` BIGINT DEFAULT 0 NOT NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NOT NULL,
+    `event_type` CHAR(1) NOT NULL,
+    `binary_encoding` VARCHAR(10) DEFAULT 'HEX' NOT NULL,
+    `column_names` MEDIUMTEXT NOT NULL,
+    `pk_column_names` MEDIUMTEXT NOT NULL,
+    `row_data` MEDIUMTEXT NULL,
+    `old_data` MEDIUMTEXT NULL,
+    `cur_data` MEDIUMTEXT NULL,
+    `resolve_data` MEDIUMTEXT NULL,
+    `resolve_ignore` SMALLINT DEFAULT 0 NULL,
+    `conflict_id` VARCHAR(50) NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`batch_id`, `node_id`, `failed_row_number`)
+)
+2025-08-14 21:17:34,811 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_job`(
+    `job_name` VARCHAR(50) NOT NULL,
+    `job_type` VARCHAR(10) NOT NULL,
+    `requires_registration` SMALLINT DEFAULT 1 NOT NULL,
+    `job_expression` MEDIUMTEXT NULL,
+    `description` VARCHAR(255) NULL,
+    `default_schedule` VARCHAR(50) NULL,
+    `default_auto_start` SMALLINT DEFAULT 1 NOT NULL,
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `is_clustered` SMALLINT DEFAULT 0 NOT NULL,
+    `create_by` VARCHAR(50) NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`job_name`)
+)
+2025-08-14 21:17:34,875 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_load_filter`(
+    `load_filter_id` VARCHAR(50) NOT NULL,
+    `load_filter_type` VARCHAR(10) NOT NULL,
+    `source_node_group_id` VARCHAR(50) NOT NULL,
+    `target_node_group_id` VARCHAR(50) NOT NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NULL,
+    `filter_on_update` SMALLINT DEFAULT 1 NOT NULL,
+    `filter_on_insert` SMALLINT DEFAULT 1 NOT NULL,
+    `filter_on_delete` SMALLINT DEFAULT 1 NOT NULL,
+    `before_write_script` MEDIUMTEXT NULL,
+    `after_write_script` MEDIUMTEXT NULL,
+    `batch_complete_script` MEDIUMTEXT NULL,
+    `batch_commit_script` MEDIUMTEXT NULL,
+    `batch_rollback_script` MEDIUMTEXT NULL,
+    `handle_error_script` MEDIUMTEXT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `load_filter_order` INTEGER DEFAULT 1 NOT NULL,
+    `fail_on_error` SMALLINT DEFAULT 0 NOT NULL,
+    PRIMARY KEY (`load_filter_id`)
+)
+2025-08-14 21:17:34,950 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_lock`(
+    `lock_action` VARCHAR(50) NOT NULL,
+    `lock_type` VARCHAR(50) NOT NULL,
+    `locking_server_id` VARCHAR(255) NULL,
+    `lock_time` DATETIME NULL,
+    `shared_count` INTEGER DEFAULT 0 NOT NULL,
+    `shared_enable` INTEGER DEFAULT 0 NOT NULL,
+    `last_lock_time` DATETIME NULL,
+    `last_locking_server_id` VARCHAR(255) NULL,
+    PRIMARY KEY (`lock_action`)
+)
+2025-08-14 21:17:34,996 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `external_id` VARCHAR(255) NOT NULL,
+    `sync_enabled` SMALLINT DEFAULT 0 NULL,
+    `sync_url` VARCHAR(255) NULL,
+    `schema_version` VARCHAR(50) NULL,
+    `symmetric_version` VARCHAR(50) NULL,
+    `config_version` VARCHAR(50) NULL,
+    `database_type` VARCHAR(50) NULL,
+    `database_version` VARCHAR(50) NULL,
+    `database_name` VARCHAR(50) NULL,
+    `batch_to_send_count` INTEGER DEFAULT 0 NULL,
+    `batch_in_error_count` INTEGER DEFAULT 0 NULL,
+    `batch_last_successful` DATETIME NULL,
+    `data_rows_to_send_count` INTEGER DEFAULT 0 NULL,
+    `data_rows_loaded_count` INTEGER DEFAULT 0 NULL,
+    `oldest_load_time` DATETIME NULL,
+    `most_recent_active_table` VARCHAR(255) NULL,
+    `purge_outgoing_last_run_ms` BIGINT DEFAULT 0 NULL,
+    `purge_outgoing_last_finish` DATETIME NULL,
+    `purge_outgoing_average_ms` BIGINT NULL,
+    `routing_last_run_ms` BIGINT NULL,
+    `routing_last_finish` DATETIME NULL,
+    `routing_average_run_ms` BIGINT DEFAULT 0 NULL,
+    `sym_data_size` BIGINT NULL,
+    `created_at_node_id` VARCHAR(50) NULL,
+    `deployment_type` VARCHAR(50) NULL,
+    `deployment_sub_type` VARCHAR(50) NULL,
+    PRIMARY KEY (`node_id`)
+)
+2025-08-14 21:17:35,087 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_channel_ctl`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `channel_id` VARCHAR(128) NOT NULL,
+    `suspend_enabled` SMALLINT DEFAULT 0 NULL,
+    `ignore_enabled` SMALLINT DEFAULT 0 NULL,
+    `last_extract_time` DATETIME NULL,
+    PRIMARY KEY (`node_id`, `channel_id`)
+)
+2025-08-14 21:17:35,125 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_communication`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `queue` VARCHAR(25) DEFAULT 'default' NOT NULL,
+    `communication_type` VARCHAR(10) NOT NULL,
+    `lock_time` DATETIME NULL,
+    `locking_server_id` VARCHAR(255) NULL,
+    `last_lock_time` DATETIME NULL,
+    `last_lock_millis` BIGINT DEFAULT 0 NULL,
+    `success_count` BIGINT DEFAULT 0 NULL,
+    `fail_count` BIGINT DEFAULT 0 NULL,
+    `skip_count` BIGINT DEFAULT 0 NULL,
+    `total_success_count` BIGINT DEFAULT 0 NULL,
+    `total_fail_count` BIGINT DEFAULT 0 NULL,
+    `total_success_millis` BIGINT DEFAULT 0 NULL,
+    `total_fail_millis` BIGINT DEFAULT 0 NULL,
+    `batch_to_send_count` BIGINT DEFAULT 0 NULL,
+    `node_priority` INTEGER DEFAULT 0 NULL,
+    PRIMARY KEY (`node_id`, `queue`, `communication_type`)
+)
+2025-08-14 21:17:35,190 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_group`(
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `description` VARCHAR(255) NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`node_group_id`)
+)
+2025-08-14 21:17:35,240 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_group_channel_wnd`(
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `channel_id` VARCHAR(128) NOT NULL,
+    `start_time` DATETIME(2) NOT NULL,
+    `end_time` DATETIME(2) NOT NULL,
+    `enabled` SMALLINT DEFAULT 0 NOT NULL,
+    PRIMARY KEY (`node_group_id`, `channel_id`, `start_time`, `end_time`)
+)
+2025-08-14 21:17:35,279 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_group_link`(
+    `source_node_group_id` VARCHAR(50) NOT NULL,
+    `target_node_group_id` VARCHAR(50) NOT NULL,
+    `data_event_action` CHAR(1) DEFAULT 'W' NOT NULL,
+    `sync_config_enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_sql_enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `is_reversible` SMALLINT DEFAULT 0 NOT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`source_node_group_id`, `target_node_group_id`)
+)
+2025-08-14 21:17:35,333 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_host`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `host_name` VARCHAR(60) NOT NULL,
+    `instance_id` VARCHAR(60) NULL,
+    `ip_address` VARCHAR(50) NULL,
+    `os_user` VARCHAR(50) NULL,
+    `os_name` VARCHAR(50) NULL,
+    `os_arch` VARCHAR(50) NULL,
+    `os_version` VARCHAR(50) NULL,
+    `available_processors` INTEGER DEFAULT 0 NULL,
+    `free_memory_bytes` BIGINT DEFAULT 0 NULL,
+    `total_memory_bytes` BIGINT DEFAULT 0 NULL,
+    `max_memory_bytes` BIGINT DEFAULT 0 NULL,
+    `java_version` VARCHAR(50) NULL,
+    `java_vendor` VARCHAR(255) NULL,
+    `jdbc_version` VARCHAR(255) NULL,
+    `symmetric_version` VARCHAR(50) NULL,
+    `timezone_offset` VARCHAR(6) NULL,
+    `heartbeat_time` DATETIME NULL,
+    `last_restart_time` DATETIME NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    PRIMARY KEY (`node_id`, `host_name`)
+)
+2025-08-14 21:17:35,410 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_host_channel_stats`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `host_name` VARCHAR(60) NOT NULL,
+    `channel_id` VARCHAR(128) NOT NULL,
+    `start_time` DATETIME(2) NOT NULL,
+    `end_time` DATETIME(2) NOT NULL,
+    `data_routed` BIGINT DEFAULT 0 NULL,
+    `data_unrouted` BIGINT DEFAULT 0 NULL,
+    `data_event_inserted` BIGINT DEFAULT 0 NULL,
+    `data_extracted` BIGINT DEFAULT 0 NULL,
+    `data_bytes_extracted` BIGINT DEFAULT 0 NULL,
+    `data_extracted_errors` BIGINT DEFAULT 0 NULL,
+    `data_bytes_sent` BIGINT DEFAULT 0 NULL,
+    `data_sent` BIGINT DEFAULT 0 NULL,
+    `data_sent_errors` BIGINT DEFAULT 0 NULL,
+    `data_loaded` BIGINT DEFAULT 0 NULL,
+    `data_bytes_loaded` BIGINT DEFAULT 0 NULL,
+    `data_loaded_errors` BIGINT DEFAULT 0 NULL,
+    `data_loaded_outgoing` BIGINT DEFAULT 0 NULL,
+    `data_bytes_loaded_outgoing` BIGINT DEFAULT 0 NULL,
+    `data_loaded_outgoing_errors` BIGINT DEFAULT 0 NULL,
+    PRIMARY KEY (`node_id`, `host_name`, `channel_id`, `start_time`, `end_time`)
+)
+2025-08-14 21:17:35,469 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_nd_hst_chnl_sts` ON `sym_node_host_channel_stats` (`node_id`, `start_time`, `end_time`)
+2025-08-14 21:17:35,573 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_host_job_stats`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `host_name` VARCHAR(60) NOT NULL,
+    `job_name` VARCHAR(50) NOT NULL,
+    `start_time` DATETIME(2) NOT NULL,
+    `end_time` DATETIME(2) NOT NULL,
+    `processed_count` BIGINT DEFAULT 0 NULL,
+    `error_flag` SMALLINT DEFAULT 0 NULL,
+    `error_message` MEDIUMTEXT NULL,
+    `target_node_id` VARCHAR(50) NULL,
+    `target_node_count` INTEGER DEFAULT 0 NULL,
+    PRIMARY KEY (`node_id`, `host_name`, `job_name`, `start_time`, `end_time`)
+)
+2025-08-14 21:17:35,618 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_nd_hst_job` ON `sym_node_host_job_stats` (`node_id`, `start_time`, `end_time`)
+2025-08-14 21:17:35,754 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_host_stats`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `host_name` VARCHAR(60) NOT NULL,
+    `start_time` DATETIME(2) NOT NULL,
+    `end_time` DATETIME(2) NOT NULL,
+    `restarted` BIGINT DEFAULT 0 NOT NULL,
+    `nodes_pulled` BIGINT DEFAULT 0 NULL,
+    `total_nodes_pull_time` BIGINT DEFAULT 0 NULL,
+    `nodes_pushed` BIGINT DEFAULT 0 NULL,
+    `total_nodes_push_time` BIGINT DEFAULT 0 NULL,
+    `nodes_rejected` BIGINT DEFAULT 0 NULL,
+    `nodes_registered` BIGINT DEFAULT 0 NULL,
+    `nodes_loaded` BIGINT DEFAULT 0 NULL,
+    `nodes_disabled` BIGINT DEFAULT 0 NULL,
+    `purged_data_rows` BIGINT DEFAULT 0 NULL,
+    `purged_data_event_rows` BIGINT DEFAULT 0 NULL,
+    `purged_stranded_data_rows` BIGINT DEFAULT 0 NULL,
+    `purged_stranded_event_rows` BIGINT DEFAULT 0 NULL,
+    `purged_expired_data_rows` BIGINT DEFAULT 0 NULL,
+    `purged_batch_outgoing_rows` BIGINT DEFAULT 0 NULL,
+    `purged_batch_incoming_rows` BIGINT DEFAULT 0 NULL,
+    `triggers_created_count` BIGINT NULL,
+    `triggers_rebuilt_count` BIGINT NULL,
+    `triggers_removed_count` BIGINT NULL,
+    PRIMARY KEY (`node_id`, `host_name`, `start_time`, `end_time`)
+)
+2025-08-14 21:17:35,794 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_nd_hst_sts` ON `sym_node_host_stats` (`node_id`, `start_time`, `end_time`)
+2025-08-14 21:17:35,925 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_identity`(
+    `node_id` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`node_id`)
+)
+2025-08-14 21:17:35,960 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_node_security`(
+    `node_id` VARCHAR(50) NOT NULL,
+    `node_password` VARCHAR(50) NOT NULL,
+    `registration_enabled` SMALLINT DEFAULT 0 NULL,
+    `registration_time` DATETIME NULL,
+    `registration_not_before` DATETIME NULL,
+    `registration_not_after` DATETIME NULL,
+    `initial_load_enabled` SMALLINT DEFAULT 0 NULL,
+    `initial_load_time` DATETIME NULL,
+    `initial_load_end_time` DATETIME NULL,
+    `initial_load_id` BIGINT NULL,
+    `initial_load_create_by` VARCHAR(255) NULL,
+    `partial_load_time` DATETIME NULL,
+    `partial_load_end_time` DATETIME NULL,
+    `partial_load_id` BIGINT NULL,
+    `partial_load_create_by` VARCHAR(255) NULL,
+    `rev_initial_load_enabled` SMALLINT DEFAULT 0 NULL,
+    `rev_initial_load_time` DATETIME NULL,
+    `rev_initial_load_id` BIGINT NULL,
+    `rev_initial_load_create_by` VARCHAR(255) NULL,
+    `failed_logins` SMALLINT DEFAULT 0 NULL,
+    `created_at_node_id` VARCHAR(50) NULL,
+    PRIMARY KEY (`node_id`)
+)
+2025-08-14 21:17:36,025 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_outgoing_batch`(
+    `batch_id` BIGINT NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `channel_id` VARCHAR(128) NULL,
+    `status` CHAR(2) NULL,
+    `error_flag` SMALLINT DEFAULT 0 NULL,
+    `sql_state` VARCHAR(10) NULL,
+    `sql_code` INTEGER DEFAULT 0 NOT NULL,
+    `sql_message` MEDIUMTEXT NULL,
+    `last_update_hostname` VARCHAR(255) NULL,
+    `last_update_time` DATETIME NULL,
+    `create_time` DATETIME NULL,
+    `summary` VARCHAR(255) NULL,
+    `ignore_count` INTEGER DEFAULT 0 NOT NULL,
+    `byte_count` BIGINT DEFAULT 0 NOT NULL,
+    `load_flag` SMALLINT DEFAULT 0 NULL,
+    `extract_count` INTEGER DEFAULT 0 NOT NULL,
+    `sent_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_count` INTEGER DEFAULT 0 NOT NULL,
+    `reload_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `other_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `data_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `extract_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_insert_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_update_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `load_delete_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `network_millis` INTEGER DEFAULT 0 NOT NULL,
+    `filter_millis` INTEGER DEFAULT 0 NOT NULL,
+    `load_millis` INTEGER DEFAULT 0 NOT NULL,
+    `router_millis` INTEGER DEFAULT 0 NOT NULL,
+    `extract_millis` INTEGER DEFAULT 0 NOT NULL,
+    `transform_extract_millis` INTEGER DEFAULT 0 NOT NULL,
+    `transform_load_millis` INTEGER DEFAULT 0 NOT NULL,
+    `load_id` BIGINT NULL,
+    `thread_id` INTEGER NULL,
+    `common_flag` SMALLINT DEFAULT 0 NULL,
+    `fallback_insert_count` INTEGER DEFAULT 0 NOT NULL,
+    `fallback_update_count` INTEGER DEFAULT 0 NOT NULL,
+    `conflict_win_count` INTEGER DEFAULT 0 NOT NULL,
+    `conflict_lose_count` INTEGER DEFAULT 0 NOT NULL,
+    `ignore_row_count` INTEGER DEFAULT 0 NOT NULL,
+    `missing_delete_count` INTEGER DEFAULT 0 NOT NULL,
+    `skip_count` INTEGER DEFAULT 0 NOT NULL,
+    `total_extract_millis` INTEGER DEFAULT 0 NOT NULL,
+    `total_load_millis` INTEGER DEFAULT 0 NOT NULL,
+    `extract_job_flag` SMALLINT DEFAULT 0 NULL,
+    `extract_start_time` DATETIME NULL,
+    `transfer_start_time` DATETIME NULL,
+    `load_start_time` DATETIME NULL,
+    `failed_data_id` BIGINT DEFAULT 0 NOT NULL,
+    `failed_line_number` BIGINT DEFAULT 0 NOT NULL,
+    `create_by` VARCHAR(255) NULL,
+    `bulk_loader_flag` SMALLINT DEFAULT 0 NULL,
+    PRIMARY KEY (`batch_id`, `node_id`)
+)
+2025-08-14 21:17:36,225 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_ob_node_status` ON `sym_outgoing_batch` (`node_id`, `status`, `channel_id`)
+2025-08-14 21:17:36,371 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_ob_status` ON `sym_outgoing_batch` (`status`)
+2025-08-14 21:17:36,415 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_ob_in_error` ON `sym_outgoing_batch` (`error_flag`)
+2025-08-14 21:17:36,461 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_outgoing_error`(
+    `batch_id` BIGINT NOT NULL,
+    `node_id` VARCHAR(50) NOT NULL,
+    `failed_row_number` BIGINT NOT NULL,
+    `failed_line_number` BIGINT DEFAULT 0 NOT NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NOT NULL,
+    `event_type` CHAR(1) NOT NULL,
+    `binary_encoding` VARCHAR(10) DEFAULT 'HEX' NOT NULL,
+    `column_names` MEDIUMTEXT NOT NULL,
+    `pk_column_names` MEDIUMTEXT NOT NULL,
+    `row_data` MEDIUMTEXT NULL,
+    `old_data` MEDIUMTEXT NULL,
+    `cur_data` MEDIUMTEXT NULL,
+    `resolve_data` MEDIUMTEXT NULL,
+    `resolve_ignore` SMALLINT DEFAULT 0 NULL,
+    `conflict_id` VARCHAR(50) NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`batch_id`, `node_id`, `failed_row_number`)
+)
+2025-08-14 21:17:36,544 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_parameter`(
+    `external_id` VARCHAR(255) NOT NULL,
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `param_key` VARCHAR(80) NOT NULL,
+    `param_value` MEDIUMTEXT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    PRIMARY KEY (`external_id`, `node_group_id`, `param_key`)
+)
+2025-08-14 21:17:36,582 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_registration_redirect`(
+    `registrant_external_id` VARCHAR(255) NOT NULL,
+    `registration_node_id` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`registrant_external_id`)
+)
+2025-08-14 21:17:36,627 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_registration_request`(
+    `node_group_id` VARCHAR(50) NOT NULL,
+    `external_id` VARCHAR(255) NOT NULL,
+    `status` CHAR(2) NOT NULL,
+    `host_name` VARCHAR(60) NOT NULL,
+    `ip_address` VARCHAR(50) NOT NULL,
+    `attempt_count` INTEGER DEFAULT 0 NULL,
+    `registered_node_id` VARCHAR(50) NULL,
+    `error_message` MEDIUMTEXT NULL,
+    `create_time` DATETIME(2) NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`node_group_id`, `external_id`, `create_time`)
+)
+2025-08-14 21:17:36,701 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_reg_req_1` ON `sym_registration_request` (`node_group_id`, `external_id`, `status`, `host_name`, `ip_address`)
+2025-08-14 21:17:36,756 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_reg_req_2` ON `sym_registration_request` (`status`)
+2025-08-14 21:17:36,787 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_router`(
+    `router_id` VARCHAR(50) NOT NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NULL,
+    `source_node_group_id` VARCHAR(50) NOT NULL,
+    `target_node_group_id` VARCHAR(50) NOT NULL,
+    `router_type` VARCHAR(50) DEFAULT 'default' NOT NULL,
+    `router_expression` MEDIUMTEXT NULL,
+    `sync_on_update` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_insert` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_delete` SMALLINT DEFAULT 1 NOT NULL,
+    `use_source_catalog_schema` SMALLINT DEFAULT 1 NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`router_id`)
+)
+2025-08-14 21:17:36,849 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_sequence`(
+    `sequence_name` VARCHAR(50) NOT NULL,
+    `current_value` BIGINT DEFAULT 0 NOT NULL,
+    `increment_by` INTEGER DEFAULT 1 NOT NULL,
+    `min_value` BIGINT DEFAULT 1 NOT NULL,
+    `max_value` BIGINT DEFAULT 9999999999 NOT NULL,
+    `cycle_flag` SMALLINT DEFAULT 0 NULL,
+    `cache_size` INTEGER DEFAULT 0 NOT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`sequence_name`)
+)
+2025-08-14 21:17:36,908 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_table_reload_request`(
+    `target_node_id` VARCHAR(50) NOT NULL,
+    `source_node_id` VARCHAR(50) NOT NULL,
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `create_time` DATETIME(2) NOT NULL,
+    `create_table` SMALLINT DEFAULT 0 NOT NULL,
+    `delete_first` SMALLINT DEFAULT 0 NOT NULL,
+    `reload_select` MEDIUMTEXT NULL,
+    `before_custom_sql` MEDIUMTEXT NULL,
+    `reload_time` DATETIME NULL,
+    `load_id` BIGINT NULL,
+    `processed` SMALLINT DEFAULT 0 NOT NULL,
+    `channel_id` VARCHAR(128) NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`target_node_id`, `source_node_id`, `trigger_id`, `router_id`, `create_time`)
+)
+2025-08-14 21:17:36,985 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_table_reload_status`(
+    `load_id` BIGINT NOT NULL,
+    `source_node_id` VARCHAR(50) NOT NULL,
+    `target_node_id` VARCHAR(50) NOT NULL,
+    `start_time` DATETIME NULL,
+    `end_time` DATETIME NULL,
+    `completed` SMALLINT DEFAULT 0 NOT NULL,
+    `cancelled` SMALLINT DEFAULT 0 NOT NULL,
+    `full_load` SMALLINT DEFAULT 0 NOT NULL,
+    `start_data_batch_id` BIGINT NULL,
+    `end_data_batch_id` BIGINT NULL,
+    `setup_batch_count` BIGINT DEFAULT 0 NOT NULL,
+    `data_batch_count` BIGINT DEFAULT 0 NOT NULL,
+    `finalize_batch_count` BIGINT DEFAULT 0 NOT NULL,
+    `setup_batch_loaded` BIGINT DEFAULT 0 NOT NULL,
+    `data_batch_loaded` BIGINT DEFAULT 0 NOT NULL,
+    `finalize_batch_loaded` BIGINT DEFAULT 0 NOT NULL,
+    `table_count` BIGINT DEFAULT 0 NOT NULL,
+    `rows_loaded` BIGINT DEFAULT 0 NOT NULL,
+    `rows_count` BIGINT DEFAULT 0 NOT NULL,
+    `error_flag` SMALLINT DEFAULT 0 NOT NULL,
+    `error_batch_id` BIGINT NULL,
+    `sql_state` VARCHAR(10) NULL,
+    `sql_code` INTEGER DEFAULT 0 NOT NULL,
+    `sql_message` MEDIUMTEXT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `batch_bulk_load_count` BIGINT DEFAULT 0 NOT NULL,
+    `row_bulk_load_count` BIGINT DEFAULT 0 NOT NULL,
+    PRIMARY KEY (`load_id`, `source_node_id`)
+)
+2025-08-14 21:17:37,053 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_transform_column`(
+    `transform_id` VARCHAR(50) NOT NULL,
+    `include_on` CHAR(1) DEFAULT '*' NOT NULL,
+    `target_column_name` VARCHAR(128) NOT NULL,
+    `source_column_name` VARCHAR(128) NULL,
+    `pk` SMALLINT DEFAULT 0 NULL,
+    `transform_type` VARCHAR(50) DEFAULT 'copy' NULL,
+    `transform_expression` MEDIUMTEXT NULL,
+    `transform_order` INTEGER DEFAULT 1 NOT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`transform_id`, `include_on`, `target_column_name`)
+)
+2025-08-14 21:17:37,097 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_transform_table`(
+    `transform_id` VARCHAR(50) NOT NULL,
+    `source_node_group_id` VARCHAR(50) NOT NULL,
+    `target_node_group_id` VARCHAR(50) NOT NULL,
+    `transform_point` VARCHAR(10) NOT NULL,
+    `source_catalog_name` VARCHAR(255) NULL,
+    `source_schema_name` VARCHAR(255) NULL,
+    `source_table_name` VARCHAR(255) NOT NULL,
+    `target_catalog_name` VARCHAR(255) NULL,
+    `target_schema_name` VARCHAR(255) NULL,
+    `target_table_name` VARCHAR(255) NULL,
+    `update_first` SMALLINT DEFAULT 0 NULL,
+    `update_action` VARCHAR(255) DEFAULT 'UPDATE_COL' NOT NULL,
+    `delete_action` VARCHAR(10) NOT NULL,
+    `transform_order` INTEGER DEFAULT 1 NOT NULL,
+    `column_policy` VARCHAR(10) DEFAULT 'SPECIFIED' NOT NULL,
+    `create_time` DATETIME NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`transform_id`, `source_node_group_id`, `target_node_group_id`)
+)
+2025-08-14 21:17:37,168 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_trigger`(
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `source_catalog_name` VARCHAR(255) NULL,
+    `source_schema_name` VARCHAR(255) NULL,
+    `source_table_name` VARCHAR(255) NOT NULL,
+    `channel_id` VARCHAR(128) NOT NULL,
+    `reload_channel_id` VARCHAR(128) DEFAULT 'reload' NOT NULL,
+    `sync_on_update` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_insert` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_delete` SMALLINT DEFAULT 1 NOT NULL,
+    `sync_on_incoming_batch` SMALLINT DEFAULT 0 NOT NULL,
+    `name_for_update_trigger` VARCHAR(255) NULL,
+    `name_for_insert_trigger` VARCHAR(255) NULL,
+    `name_for_delete_trigger` VARCHAR(255) NULL,
+    `sync_on_update_condition` MEDIUMTEXT NULL,
+    `sync_on_insert_condition` MEDIUMTEXT NULL,
+    `sync_on_delete_condition` MEDIUMTEXT NULL,
+    `custom_before_update_text` MEDIUMTEXT NULL,
+    `custom_before_insert_text` MEDIUMTEXT NULL,
+    `custom_before_delete_text` MEDIUMTEXT NULL,
+    `custom_on_update_text` MEDIUMTEXT NULL,
+    `custom_on_insert_text` MEDIUMTEXT NULL,
+    `custom_on_delete_text` MEDIUMTEXT NULL,
+    `external_select` MEDIUMTEXT NULL,
+    `tx_id_expression` MEDIUMTEXT NULL,
+    `channel_expression` MEDIUMTEXT NULL,
+    `excluded_column_names` MEDIUMTEXT NULL,
+    `included_column_names` MEDIUMTEXT NULL,
+    `sync_key_names` MEDIUMTEXT NULL,
+    `use_stream_lobs` SMALLINT DEFAULT 0 NOT NULL,
+    `use_capture_lobs` SMALLINT DEFAULT 0 NOT NULL,
+    `use_capture_old_data` SMALLINT DEFAULT 1 NOT NULL,
+    `use_handle_key_updates` SMALLINT DEFAULT 1 NOT NULL,
+    `stream_row` SMALLINT DEFAULT 0 NOT NULL,
+    `time_based_column_name` VARCHAR(255) NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `description` MEDIUMTEXT NULL,
+    PRIMARY KEY (`trigger_id`)
+)
+2025-08-14 21:17:37,243 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_trigger_hist`(
+    `trigger_hist_id` INTEGER NOT NULL,
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `source_table_name` VARCHAR(255) NOT NULL,
+    `source_catalog_name` VARCHAR(255) NULL,
+    `source_schema_name` VARCHAR(255) NULL,
+    `name_for_update_trigger` VARCHAR(255) NULL,
+    `name_for_insert_trigger` VARCHAR(255) NULL,
+    `name_for_delete_trigger` VARCHAR(255) NULL,
+    `table_hash` BIGINT DEFAULT 0 NOT NULL,
+    `trigger_row_hash` BIGINT DEFAULT 0 NOT NULL,
+    `trigger_template_hash` BIGINT DEFAULT 0 NOT NULL,
+    `column_names` MEDIUMTEXT NOT NULL,
+    `pk_column_names` MEDIUMTEXT NOT NULL,
+    `is_missing_pk` SMALLINT DEFAULT 0 NOT NULL,
+    `last_trigger_build_reason` CHAR(1) NOT NULL,
+    `error_message` MEDIUMTEXT NULL,
+    `create_time` DATETIME NOT NULL,
+    `inactive_time` DATETIME NULL,
+    PRIMARY KEY (`trigger_hist_id`)
+)
+2025-08-14 21:17:37,302 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE INDEX `sym_idx_trigg_hist_1` ON `sym_trigger_hist` (`trigger_id`, `inactive_time`)
+2025-08-14 21:17:37,334 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_trigger_router`(
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `enabled` SMALLINT DEFAULT 1 NOT NULL,
+    `initial_load_order` INTEGER DEFAULT 1 NOT NULL,
+    `initial_load_select` MEDIUMTEXT NULL,
+    `initial_load_delete_stmt` MEDIUMTEXT NULL,
+    `ping_back_enabled` SMALLINT DEFAULT 0 NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    `description` MEDIUMTEXT NULL,
+    `data_refresh_type` VARCHAR(50) NULL,
+    PRIMARY KEY (`trigger_id`, `router_id`)
+)
+2025-08-14 21:17:37,404 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: CREATE TABLE `sym_trigger_router_grouplet`(
+    `grouplet_id` VARCHAR(50) NOT NULL,
+    `trigger_id` VARCHAR(128) NOT NULL,
+    `router_id` VARCHAR(50) NOT NULL,
+    `applies_when` CHAR(1) NOT NULL,
+    `create_time` DATETIME NOT NULL,
+    `last_update_by` VARCHAR(50) NULL,
+    `last_update_time` DATETIME NOT NULL,
+    PRIMARY KEY (`grouplet_id`, `trigger_id`, `router_id`, `applies_when`)
+)
+2025-08-14 21:17:37,443 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_conflict`
+    ADD CONSTRAINT `sym_fk_cf_2_grp_lnk` FOREIGN KEY (`source_node_group_id`, `target_node_group_id`) REFERENCES `sym_node_group_link` (`source_node_group_id`, `target_node_group_id`)
+2025-08-14 21:17:37,602 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_file_trigger_router`
+    ADD CONSTRAINT `sym_fk_ftr_2_ftrg` FOREIGN KEY (`trigger_id`) REFERENCES `sym_file_trigger` (`trigger_id`)
+2025-08-14 21:17:37,733 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_file_trigger_router`
+    ADD CONSTRAINT `sym_fk_ftr_2_rtr` FOREIGN KEY (`router_id`) REFERENCES `sym_router` (`router_id`)
+2025-08-14 21:17:37,848 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_grouplet_link`
+    ADD CONSTRAINT `sym_fk_gpltlnk_2_gplt` FOREIGN KEY (`grouplet_id`) REFERENCES `sym_grouplet` (`grouplet_id`)
+2025-08-14 21:17:37,924 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_node_group_link`
+    ADD CONSTRAINT `sym_fk_lnk_2_grp_src` FOREIGN KEY (`source_node_group_id`) REFERENCES `sym_node_group` (`node_group_id`)
+2025-08-14 21:17:38,014 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_node_group_link`
+    ADD CONSTRAINT `sym_fk_lnk_2_grp_tgt` FOREIGN KEY (`target_node_group_id`) REFERENCES `sym_node_group` (`node_group_id`)
+2025-08-14 21:17:38,134 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_node_identity`
+    ADD CONSTRAINT `sym_fk_ident_2_node` FOREIGN KEY (`node_id`) REFERENCES `sym_node` (`node_id`)
+2025-08-14 21:17:38,219 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_node_security`
+    ADD CONSTRAINT `sym_fk_sec_2_node` FOREIGN KEY (`node_id`) REFERENCES `sym_node` (`node_id`)
+2025-08-14 21:17:38,353 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_router`
+    ADD CONSTRAINT `sym_fk_rt_2_grp_lnk` FOREIGN KEY (`source_node_group_id`, `target_node_group_id`) REFERENCES `sym_node_group_link` (`source_node_group_id`, `target_node_group_id`)
+2025-08-14 21:17:38,571 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_transform_table`
+    ADD CONSTRAINT `sym_fk_tt_2_grp_lnk` FOREIGN KEY (`source_node_group_id`, `target_node_group_id`) REFERENCES `sym_node_group_link` (`source_node_group_id`, `target_node_group_id`)
+2025-08-14 21:17:38,680 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger`
+    ADD CONSTRAINT `sym_fk_trg_2_chnl` FOREIGN KEY (`channel_id`) REFERENCES `sym_channel` (`channel_id`)
+2025-08-14 21:17:38,799 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger`
+    ADD CONSTRAINT `sym_fk_trg_2_rld_chnl` FOREIGN KEY (`reload_channel_id`) REFERENCES `sym_channel` (`channel_id`)
+2025-08-14 21:17:38,928 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger_router`
+    ADD CONSTRAINT `sym_fk_tr_2_trg` FOREIGN KEY (`trigger_id`) REFERENCES `sym_trigger` (`trigger_id`)
+2025-08-14 21:17:39,013 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger_router`
+    ADD CONSTRAINT `sym_fk_tr_2_rtr` FOREIGN KEY (`router_id`) REFERENCES `sym_router` (`router_id`)
+2025-08-14 21:17:39,165 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger_router_grouplet`
+    ADD CONSTRAINT `sym_fk_trgplt_2_gplt` FOREIGN KEY (`grouplet_id`) REFERENCES `sym_grouplet` (`grouplet_id`)
+2025-08-14 21:17:39,239 INFO [sucursal-001] [LogSqlResultsListener] [symmetric-engine-startup-1] Executing DDL: ALTER TABLE `sym_trigger_router_grouplet`
+    ADD CONSTRAINT `sym_fk_trgplt_2_tr` FOREIGN KEY (`trigger_id`, `router_id`) REFERENCES `sym_trigger_router` (`trigger_id`, `router_id`)
+2025-08-14 21:17:39,346 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] This node picked a server id of DESKTOP-A01P1VB
+2025-08-14 21:17:39,350 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Synchronizing triggers
+2025-08-14 21:17:39,789 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: fix multiple active trigger histories took 16 ms
+2025-08-14 21:17:39,799 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get triggers for current node took 399 ms
+2025-08-14 21:17:39,800 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers started took 0 ms
+2025-08-14 21:17:39,802 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get active trigger histories took 7 ms
+2025-08-14 21:17:39,803 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create ddl triggers took 0 ms
+2025-08-14 21:17:39,805 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers ended took 0 ms
+2025-08-14 21:17:39,807 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: tables for trigger took 0 ms
+2025-08-14 21:17:39,807 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: drop trigger took 0 ms
+2025-08-14 21:17:39,813 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger inactivated took 0 ms
+2025-08-14 21:17:39,814 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: does trigger exist took 0 ms
+2025-08-14 21:17:39,817 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: inactivate trigger hist took 0 ms
+2025-08-14 21:17:39,818 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create database trigger took 0 ms
+2025-08-14 21:17:39,821 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger to table supporting info took 0 ms
+2025-08-14 21:17:39,822 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: table does not exist took 0 ms
+2025-08-14 21:17:39,856 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Done synchronizing triggers
+2025-08-14 21:17:39,918 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] Done with auto update of SymmetricDS tables
+2025-08-14 21:17:39,956 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring config channel
+2025-08-14 21:17:40,062 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring system channel
+2025-08-14 21:17:40,116 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring reload channel
+2025-08-14 21:17:40,136 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring monitor channel
+2025-08-14 21:17:40,163 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring heartbeat channel
+2025-08-14 21:17:40,207 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring default channel
+2025-08-14 21:17:40,229 INFO [sucursal-001] [ConfigurationService] [symmetric-engine-startup-1] Auto-configuring dynamic channel
+2025-08-14 21:17:40,251 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] Generated a new instance ID (DESKTOP-A01P1VB-9b88a415-ee06-42f7-9149-39c46e0179ad) because the current instance ID is missing or blank
+2025-08-14 21:17:40,271 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] Deleting the sym_node_host row(s) for node 'null' because the instance ID has changed
+2025-08-14 21:17:40,470 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-14 21:17:40,493 INFO [sucursal-001] [ClientExtensionService] [symmetric-engine-startup-1] Found 7 extension points from spring that will be registered
+2025-08-14 21:17:40,496 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] Cleaning staging...
+2025-08-14 21:17:40,502 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] Finished cleaning staging in 0 seconds.
+2025-08-14 21:17:40,519 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Inserting rows for node, security, identity and group for registration server
+2025-08-14 21:17:40,879 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Done initializing SymmetricDS database
+2025-08-14 21:17:41,112 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS database version : 3.16.5
+2025-08-14 21:17:41,113 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS software version : 3.16.5
+2025-08-14 21:17:41,213 ERROR [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] The engine is named sucursal-001' but the sync.url property does not end with the same engine name: https://symmetricds-j1ak.onrender.com/sync/supabase-server
+2025-08-14 21:17:41,327 ERROR [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Did not start SymmetricDS.  It has not been configured properly
+2025-08-14 21:17:41,337 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] 
+2025-08-14 21:19:36,758 INFO [] [AbstractSymmetricEngine] [Thread-10] Stopping SymmetricDS externalId=sucursal-001 version=3.16.5 database=MySQL
