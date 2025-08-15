@@ -1098,3 +1098,351 @@ create function sym_transaction_id_post_5_7_6()
 2025-08-14 21:17:41,327 ERROR [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Did not start SymmetricDS.  It has not been configured properly
 2025-08-14 21:17:41,337 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] 
 2025-08-14 21:19:36,758 INFO [] [AbstractSymmetricEngine] [Thread-10] Stopping SymmetricDS externalId=sucursal-001 version=3.16.5 database=MySQL
+2025-08-14 21:27:38,163 INFO [startup] [AbstractCommandLauncher] [main] Command: {}
+2025-08-14 21:27:38,230 INFO [startup] [AbstractCommandLauncher] [main] Option: name=engine, value={sucursal-001}
+2025-08-14 21:27:38,247 INFO [startup] [AbstractCommandLauncher] [main] Option: name=port, value={8081}
+2025-08-14 21:27:39,295 INFO [startup] [SymmetricUtils] [main] 
+   _____                              __       _       ____   _____
+  / ___/ __  _____ __  ___ __  ___  _/ /_ ____(_)___  / __ | / ___/
+  \__ \ / / / / _ `_ \/ _ `_ \/ _ \/_ __// __/ / __/ / / / / \__ \ 
+ ___/ // /_/ / // // / // // /  __// /  / / / / /_  / /_/ / ___/ / 
+/____/ \__  /_//_//_/_//_//_/\___/ \_/ /_/ /_/\__/ /_____/ /____/  
+      /____/                                                        
++-----------------------------------------------------------------+
+| Copyright (C) 2007-2025 JumpMind, Inc.                          |
+|                                                                 |
+| Licensed under the GNU General Public License version 3.        |
+| This software comes with ABSOLUTELY NO WARRANTY.                |
+| See http://www.gnu.org/licenses/gpl.html                        |
++-----------------------------------------------------------------+
+2025-08-14 21:27:39,297 INFO [startup] [SymmetricWebServer] [main] About to start SymmetricDS web server on 0.0.0.0:8081:HTTP/1.1 with context path /
+2025-08-14 21:27:40,782 INFO [startup] [SymmetricLauncher] [main] Starting SymmetricLauncher v3.16.5 using Java 24.0.2 with PID 15520 (C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\web\WEB-INF\lib\symmetric-server-3.16.5.jar started by Estudiante in C:\Users\Estudiante\Desktop\symmetric-server-3.16.5)
+2025-08-14 21:27:40,966 INFO [startup] [SymmetricLauncher] [main] No active profile set, falling back to 1 default profile: "default"
+2025-08-14 21:27:51,972 INFO [startup] [SymmetricEngineHolder] [main] Current directory is C:\Users\Estudiante\Desktop\symmetric-server-3.16.5
+2025-08-14 21:27:51,973 INFO [startup] [SymmetricEngineHolder] [main] Starting in single-server mode
+2025-08-14 21:27:52,239 INFO [sucursal-001] [ClientSymmetricEngine] [symmetric-engine-startup-1] Initializing connection to database
+2025-08-14 21:27:56,101 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] Detected database 'MySQL', version '8, minor version '0', protocol 'mysql'
+2025-08-14 21:27:56,351 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] The IDatabasePlatform being used is org.jumpmind.db.platform.mysql.MySqlDatabasePlatform
+2025-08-14 21:27:57,077 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] The DbDialect being used is org.jumpmind.symmetric.db.mysql.MySqlSymmetricDialect
+2025-08-14 21:27:57,468 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-14 21:27:57,594 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] The staging directory was initialized at the following location: C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\tmp\sucursal-001
+2025-08-14 21:27:57,643 INFO [startup] [SymmetricLauncher] [main] Started SymmetricLauncher in 18.123 seconds (process running for 24.455)
+2025-08-14 21:27:59,476 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-14 21:27:59,479 INFO [sucursal-001] [ClientExtensionService] [symmetric-engine-startup-1] Found 7 extension points from spring that will be registered
+2025-08-14 21:27:59,664 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Detected change in SymmetricDS startup database parameters. Hash 0x61d94ed != null
+2025-08-14 21:27:59,667 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Initializing SymmetricDS database
+2025-08-14 21:27:59,673 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Checking tables and objects. force=true
+2025-08-14 21:27:59,740 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] Checking if SymmetricDS tables need created or altered
+2025-08-14 21:28:03,591 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Done initializing SymmetricDS database
+2025-08-14 21:28:03,636 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS database version : 3.16.5
+2025-08-14 21:28:03,645 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS software version : 3.16.5
+2025-08-14 21:28:03,679 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Starting registered node [group=sucursal, id=sucursal-001, nodeId=sucursal-001]
+2025-08-14 21:28:03,727 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] This node picked a server id of DESKTOP-A01P1VB
+2025-08-14 21:28:03,736 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Synchronizing triggers
+2025-08-14 21:28:03,858 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: fix multiple active trigger histories took 5 ms
+2025-08-14 21:28:03,861 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get triggers for current node took 89 ms
+2025-08-14 21:28:03,862 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers started took 0 ms
+2025-08-14 21:28:03,863 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get active trigger histories took 4 ms
+2025-08-14 21:28:03,880 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create ddl triggers took 0 ms
+2025-08-14 21:28:03,887 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers ended took 0 ms
+2025-08-14 21:28:03,890 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: tables for trigger took 0 ms
+2025-08-14 21:28:03,893 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: drop trigger took 0 ms
+2025-08-14 21:28:03,893 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger inactivated took 0 ms
+2025-08-14 21:28:03,894 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: does trigger exist took 0 ms
+2025-08-14 21:28:03,896 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: inactivate trigger hist took 0 ms
+2025-08-14 21:28:03,896 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create database trigger took 0 ms
+2025-08-14 21:28:03,902 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger to table supporting info took 0 ms
+2025-08-14 21:28:03,904 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: table does not exist took 0 ms
+2025-08-14 21:28:03,905 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Done synchronizing triggers
+2025-08-14 21:28:03,908 INFO [sucursal-001] [PushHeartbeatListener] [symmetric-engine-startup-1] Some attribute(s) of node changed.  Recording changes
+2025-08-14 21:28:03,910 INFO [sucursal-001] [PushHeartbeatListener] [symmetric-engine-startup-1] Updating my node configuration info according to the symmetric properties
+2025-08-14 21:28:04,109 INFO [sucursal-001] [RouterJob] [symmetric-engine-startup-1] Starting job 'Routing' on periodic schedule every 10000ms with the first run at 2025-08-14T21:28:07.138-0300
+2025-08-14 21:28:04,161 INFO [sucursal-001] [PushJob] [symmetric-engine-startup-1] Starting job 'Push' on periodic schedule every 10000ms with the first run at 2025-08-14T21:28:07.530-0300
+2025-08-14 21:28:04,172 INFO [sucursal-001] [PullJob] [symmetric-engine-startup-1] Starting job 'Pull' on periodic schedule every 10000ms with the first run at 2025-08-14T21:28:05.577-0300
+2025-08-14 21:28:04,174 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Push not configured for auto start
+2025-08-14 21:28:04,177 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Pull not configured for auto start
+2025-08-14 21:28:04,328 INFO [sucursal-001] [OutgoingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Outgoing' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T00:00:00.000-0300
+2025-08-14 21:28:04,418 INFO [sucursal-001] [IncomingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Incoming' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T00:00:00.000-0300
+2025-08-14 21:28:04,489 INFO [sucursal-001] [StatisticFlushJob] [symmetric-engine-startup-1] Starting job 'Stat Flush' on cron schedule '0 0/5 * * * *' with the first run at 2025-08-14T21:30:00.000-0300
+2025-08-14 21:28:04,495 INFO [sucursal-001] [SyncTriggersJob] [symmetric-engine-startup-1] Starting job 'SyncTriggers' on cron schedule '0 0 0 * * *' with the first run at 2025-08-15T00:00:00.000-0300
+2025-08-14 21:28:04,527 INFO [sucursal-001] [HeartbeatJob] [symmetric-engine-startup-1] Starting job 'Heartbeat' on periodic schedule every 30000ms with the first run at 2025-08-14T21:28:12.936-0300
+2025-08-14 21:28:04,554 INFO [sucursal-001] [WatchdogJob] [symmetric-engine-startup-1] Starting job 'Watchdog' on periodic schedule every 3600000ms with the first run at 2025-08-14T21:28:05.626-0300
+2025-08-14 21:28:04,559 INFO [sucursal-001] [StageManagementJob] [symmetric-engine-startup-1] Starting job 'Stage Management' on cron schedule '0 0 * * * *' with the first run at 2025-08-14T22:00:00.000-0300
+2025-08-14 21:28:04,586 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Refresh Cache not configured for auto start
+2025-08-14 21:28:04,591 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Tracker not configured for auto start
+2025-08-14 21:28:04,593 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Pull not configured for auto start
+2025-08-14 21:28:04,594 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Push not configured for auto start
+2025-08-14 21:28:04,620 INFO [sucursal-001] [InitialLoadExtractorJob] [symmetric-engine-startup-1] Starting job 'Initial Load Extract' on periodic schedule every 10000ms with the first run at 2025-08-14T21:28:13.816-0300
+2025-08-14 21:28:04,624 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Report Status not configured for auto start
+2025-08-14 21:28:04,629 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Log Miner not configured for auto start
+2025-08-14 21:28:04,655 INFO [sucursal-001] [InitialLoadJob] [symmetric-engine-startup-1] Starting job 'Initial Load Queue' on periodic schedule every 10000ms with the first run at 2025-08-14T21:28:12.810-0300
+2025-08-14 21:28:04,696 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS Node STARTED:
+	 nodeId=sucursal-001
+	 groupId=sucursal
+	 type=null
+	 subType=trigger-based
+	 name=sucursal-001
+	 softwareVersion=3.16.5
+	 databaseName=MySQL
+	 databaseVersion=8.0
+	 driverName=MySQL Connector/J
+	 driverVersion=mysql-connector-j-8.4.0 (Revision: 1c3f5c149e0bfe31c7fbeb24e2d260cd890972c4)
+	 uptime=0 sec.
+2025-08-14 21:28:05,594 INFO [sucursal-001] [NodeCommunicationService] [sucursal-001-job-1] pull will use 10 threads
+2025-08-14 21:28:07,171 INFO [sucursal-001] [DataService] [sucursal-001-job-3] Inserting missing last data gap: { startId: 1, endId: 50000001, createTime: "Thu Aug 14 21:28:07 GMT-03:00 2025" }
+2025-08-14 21:28:07,222 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is running
+2025-08-14 21:28:07,255 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Querying data in gaps from database took 18 ms
+2025-08-14 21:28:07,256 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is done after 19 ms
+2025-08-14 23:42:11,215 INFO [sucursal-001] [StagingManager] [sucursal-001-job-20] Cleaning staging...
+2025-08-14 23:42:11,381 INFO [sucursal-001] [StagingManager] [sucursal-001-job-20] Finished cleaning staging in 0 seconds.
+2025-08-15 12:25:03,264 INFO [sucursal-001] [StagingManager] [sucursal-001-job-19] Cleaning staging...
+2025-08-15 12:25:03,266 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] The incoming purge process is about to run
+2025-08-15 12:25:03,267 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] The outgoing purge process is about to run for data older than 2025-08-15 10:25:03.266
+2025-08-15 12:25:03,268 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] Synchronizing triggers
+2025-08-15 12:25:03,989 INFO [sucursal-001] [StagingManager] [sucursal-001-job-19] Finished cleaning staging in 0 seconds.
+2025-08-15 12:25:04,077 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: fix multiple active trigger histories took 6 ms
+2025-08-15 12:25:04,511 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Getting ranges for purge
+2025-08-15 12:25:05,074 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Getting range for incoming batch
+2025-08-15 12:25:05,345 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: get triggers for current node took 73 ms
+2025-08-15 12:25:05,865 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] About to purge incoming batch
+2025-08-15 12:25:06,173 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Eligible ranges: outgoing batch [1 - 0], data [0 - 0], first data gap [1]
+2025-08-15 12:25:06,420 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: sync triggers started took 0 ms
+2025-08-15 12:25:06,704 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Done purging 0 incoming batch rows
+2025-08-15 12:25:06,876 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Looking for old nodes in batches
+2025-08-15 12:25:07,083 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: get active trigger histories took 4 ms
+2025-08-15 12:25:07,234 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Purging incoming error rows
+2025-08-15 12:25:07,459 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Looking for old channels in batches
+2025-08-15 12:25:07,677 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: update or create ddl triggers took 0 ms
+2025-08-15 12:25:07,905 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Purged 0 incoming error rows
+2025-08-15 12:25:08,086 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Getting count of outstanding batches
+2025-08-15 12:25:08,194 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: sync triggers ended took 0 ms
+2025-08-15 12:25:08,366 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Purging registration requests that are older than 2025-08-10 12:25:08.365
+2025-08-15 12:25:08,553 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Getting first batch_id for outstanding batches
+2025-08-15 12:25:08,816 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: tables for trigger took 0 ms
+2025-08-15 12:25:08,867 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] Purging trigger histories that are inactive and older than 2025-06-16 12:25:08.866
+2025-08-15 12:25:08,883 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: drop trigger took 0 ms
+2025-08-15 12:25:08,886 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Looking for lingering batches before batch 1
+2025-08-15 12:25:08,911 INFO [sucursal-001] [PurgeService] [sucursal-001-job-2] The incoming purge process has completed
+2025-08-15 12:25:08,927 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Done purging 0 lingering batches and 0 rows
+2025-08-15 12:25:08,928 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: trigger inactivated took 0 ms
+2025-08-15 12:25:08,928 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Getting range for stranded data events
+2025-08-15 12:25:09,374 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: does trigger exist took 0 ms
+2025-08-15 12:25:09,611 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Getting range for stranded data
+2025-08-15 12:25:09,782 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: inactivate trigger hist took 0 ms
+2025-08-15 12:25:09,869 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: update or create database trigger took 0 ms
+2025-08-15 12:25:09,975 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Purging table reload statuses that are older than 2025-08-05 12:25:09.975
+2025-08-15 12:25:10,114 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: trigger to table supporting info took 0 ms
+2025-08-15 12:25:10,309 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Purging table reload requests that are older than 2025-08-05 12:25:09.975
+2025-08-15 12:25:10,439 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] SyncTriggers: table does not exist took 0 ms
+2025-08-15 12:25:10,559 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Purging extract requests that are older than 2025-08-05 12:25:09.975
+2025-08-15 12:25:10,646 INFO [sucursal-001] [TriggerRouterService] [sucursal-001-job-13] Done synchronizing triggers
+2025-08-15 12:25:10,749 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] Looking for old channels in data
+2025-08-15 12:25:10,883 INFO [sucursal-001] [PurgeService] [sucursal-001-job-12] The outgoing purge process has completed
+2025-08-15 12:44:16,548 INFO [startup] [AbstractCommandLauncher] [main] Command: {}
+2025-08-15 12:44:16,580 INFO [startup] [AbstractCommandLauncher] [main] Option: name=engine, value={sucursal-001}
+2025-08-15 12:44:16,580 INFO [startup] [AbstractCommandLauncher] [main] Option: name=port, value={8081}
+2025-08-15 12:44:17,363 INFO [startup] [SymmetricUtils] [main] 
+   _____                              __       _       ____   _____
+  / ___/ __  _____ __  ___ __  ___  _/ /_ ____(_)___  / __ | / ___/
+  \__ \ / / / / _ `_ \/ _ `_ \/ _ \/_ __// __/ / __/ / / / / \__ \ 
+ ___/ // /_/ / // // / // // /  __// /  / / / / /_  / /_/ / ___/ / 
+/____/ \__  /_//_//_/_//_//_/\___/ \_/ /_/ /_/\__/ /_____/ /____/  
+      /____/                                                        
++-----------------------------------------------------------------+
+| Copyright (C) 2007-2025 JumpMind, Inc.                          |
+|                                                                 |
+| Licensed under the GNU General Public License version 3.        |
+| This software comes with ABSOLUTELY NO WARRANTY.                |
+| See http://www.gnu.org/licenses/gpl.html                        |
++-----------------------------------------------------------------+
+2025-08-15 12:44:17,367 INFO [startup] [SymmetricWebServer] [main] About to start SymmetricDS web server on 0.0.0.0:8081:HTTP/1.1 with context path /
+2025-08-15 12:44:19,953 INFO [startup] [SymmetricLauncher] [main] Starting SymmetricLauncher v3.16.5 using Java 24.0.2 with PID 16268 (C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\web\WEB-INF\lib\symmetric-server-3.16.5.jar started by Estudiante in C:\Users\Estudiante\Desktop\symmetric-server-3.16.5)
+2025-08-15 12:44:19,970 INFO [startup] [SymmetricLauncher] [main] No active profile set, falling back to 1 default profile: "default"
+2025-08-15 12:44:29,409 INFO [startup] [SymmetricEngineHolder] [main] Current directory is C:\Users\Estudiante\Desktop\symmetric-server-3.16.5
+2025-08-15 12:44:29,411 INFO [startup] [SymmetricEngineHolder] [main] Starting in single-server mode
+2025-08-15 12:44:29,559 INFO [sucursal-001] [ClientSymmetricEngine] [symmetric-engine-startup-1] Initializing connection to database
+2025-08-15 12:44:33,238 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] Detected database 'MySQL', version '8, minor version '0', protocol 'mysql'
+2025-08-15 12:44:33,491 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] The IDatabasePlatform being used is org.jumpmind.db.platform.mysql.MySqlDatabasePlatform
+2025-08-15 12:44:35,371 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] The DbDialect being used is org.jumpmind.symmetric.db.mysql.MySqlSymmetricDialect
+2025-08-15 12:44:35,934 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-15 12:44:36,022 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] The staging directory was initialized at the following location: C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\tmp\sucursal-001
+2025-08-15 12:44:36,229 INFO [startup] [SymmetricLauncher] [main] Started SymmetricLauncher in 18.431 seconds (process running for 27.992)
+2025-08-15 12:44:38,236 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-15 12:44:38,257 INFO [sucursal-001] [ClientExtensionService] [symmetric-engine-startup-1] Found 7 extension points from spring that will be registered
+2025-08-15 12:44:38,460 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Initializing SymmetricDS database
+2025-08-15 12:44:38,601 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Version matches for tables and objects
+2025-08-15 12:44:38,780 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Done initializing SymmetricDS database
+2025-08-15 12:44:38,782 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS database version : 3.16.5
+2025-08-15 12:44:38,782 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS software version : 3.16.5
+2025-08-15 12:44:38,850 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Starting registered node [group=sucursal, id=sucursal-001, nodeId=sucursal-001]
+2025-08-15 12:44:38,854 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] This node picked a server id of DESKTOP-A01P1VB
+2025-08-15 12:44:38,860 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Synchronizing triggers
+2025-08-15 12:44:38,997 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: fix multiple active trigger histories took 5 ms
+2025-08-15 12:44:39,008 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get triggers for current node took 110 ms
+2025-08-15 12:44:39,009 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers started took 0 ms
+2025-08-15 12:44:39,010 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get active trigger histories took 5 ms
+2025-08-15 12:44:39,010 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create ddl triggers took 0 ms
+2025-08-15 12:44:39,011 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers ended took 0 ms
+2025-08-15 12:44:39,011 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: tables for trigger took 0 ms
+2025-08-15 12:44:39,012 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: drop trigger took 0 ms
+2025-08-15 12:44:39,012 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger inactivated took 0 ms
+2025-08-15 12:44:39,013 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: does trigger exist took 0 ms
+2025-08-15 12:44:39,013 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: inactivate trigger hist took 0 ms
+2025-08-15 12:44:39,013 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create database trigger took 0 ms
+2025-08-15 12:44:39,015 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger to table supporting info took 0 ms
+2025-08-15 12:44:39,016 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: table does not exist took 0 ms
+2025-08-15 12:44:39,018 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Done synchronizing triggers
+2025-08-15 12:44:39,116 INFO [sucursal-001] [RouterJob] [symmetric-engine-startup-1] Starting job 'Routing' on periodic schedule every 10000ms with the first run at 2025-08-15T12:44:42.144-0300
+2025-08-15 12:44:39,130 INFO [sucursal-001] [PushJob] [symmetric-engine-startup-1] Starting job 'Push' on periodic schedule every 10000ms with the first run at 2025-08-15T12:44:42.499-0300
+2025-08-15 12:44:39,136 INFO [sucursal-001] [PullJob] [symmetric-engine-startup-1] Starting job 'Pull' on periodic schedule every 10000ms with the first run at 2025-08-15T12:44:40.541-0300
+2025-08-15 12:44:39,145 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Push not configured for auto start
+2025-08-15 12:44:39,146 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Pull not configured for auto start
+2025-08-15 12:44:39,173 INFO [sucursal-001] [OutgoingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Outgoing' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T16:00:00.000-0300
+2025-08-15 12:44:39,210 INFO [sucursal-001] [IncomingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Incoming' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T16:00:00.000-0300
+2025-08-15 12:44:39,266 INFO [sucursal-001] [StatisticFlushJob] [symmetric-engine-startup-1] Starting job 'Stat Flush' on cron schedule '0 0/5 * * * *' with the first run at 2025-08-15T12:45:00.000-0300
+2025-08-15 12:44:39,281 INFO [sucursal-001] [SyncTriggersJob] [symmetric-engine-startup-1] Starting job 'SyncTriggers' on cron schedule '0 0 0 * * *' with the first run at 2025-08-16T00:00:00.000-0300
+2025-08-15 12:44:39,303 INFO [sucursal-001] [HeartbeatJob] [symmetric-engine-startup-1] Starting job 'Heartbeat' on periodic schedule every 30000ms with the first run at 2025-08-15T12:44:47.712-0300
+2025-08-15 12:44:39,315 INFO [sucursal-001] [WatchdogJob] [symmetric-engine-startup-1] Starting job 'Watchdog' on periodic schedule every 3600000ms with the first run at 2025-08-15T12:44:40.387-0300
+2025-08-15 12:44:39,318 INFO [sucursal-001] [StageManagementJob] [symmetric-engine-startup-1] Starting job 'Stage Management' on cron schedule '0 0 * * * *' with the first run at 2025-08-15T13:00:00.000-0300
+2025-08-15 12:44:39,341 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Refresh Cache not configured for auto start
+2025-08-15 12:44:39,344 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Tracker not configured for auto start
+2025-08-15 12:44:39,364 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Pull not configured for auto start
+2025-08-15 12:44:39,365 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Push not configured for auto start
+2025-08-15 12:44:39,366 INFO [sucursal-001] [InitialLoadExtractorJob] [symmetric-engine-startup-1] Starting job 'Initial Load Extract' on periodic schedule every 10000ms with the first run at 2025-08-15T12:44:48.562-0300
+2025-08-15 12:44:39,382 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Report Status not configured for auto start
+2025-08-15 12:44:39,383 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Log Miner not configured for auto start
+2025-08-15 12:44:39,384 INFO [sucursal-001] [InitialLoadJob] [symmetric-engine-startup-1] Starting job 'Initial Load Queue' on periodic schedule every 10000ms with the first run at 2025-08-15T12:44:47.539-0300
+2025-08-15 12:44:39,403 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS Node STARTED:
+	 nodeId=sucursal-001
+	 groupId=sucursal
+	 type=null
+	 subType=trigger-based
+	 name=sucursal-001
+	 softwareVersion=3.16.5
+	 databaseName=MySQL
+	 databaseVersion=8.0
+	 driverName=MySQL Connector/J
+	 driverVersion=mysql-connector-j-8.4.0 (Revision: 1c3f5c149e0bfe31c7fbeb24e2d260cd890972c4)
+	 uptime=0 sec.
+2025-08-15 12:44:40,577 INFO [sucursal-001] [NodeCommunicationService] [sucursal-001-job-1] pull will use 10 threads
+2025-08-15 12:44:42,191 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is running
+2025-08-15 12:44:42,210 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Querying data in gaps from database took 18 ms
+2025-08-15 12:44:42,214 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is done after 20 ms
+2025-08-15 12:57:38,785 INFO [] [AbstractSymmetricEngine] [Thread-10] Stopping SymmetricDS externalId=sucursal-001 version=3.16.5 database=MySQL
+2025-08-15 12:57:38,785 INFO [] [RouterJob] [Thread-10] The 'Routing' job has been cancelled
+2025-08-15 12:57:38,785 INFO [] [PushJob] [Thread-10] The 'Push' job has been cancelled
+2025-08-15 12:57:38,785 INFO [] [PullJob] [Thread-10] The 'Pull' job has been cancelled
+2025-08-15 12:57:38,786 INFO [] [OutgoingPurgeJob] [Thread-10] The 'Purge Outgoing' job has been cancelled
+2025-08-15 12:57:38,787 INFO [] [IncomingPurgeJob] [Thread-10] The 'Purge Incoming' job has been cancelled
+2025-08-15 12:57:38,787 INFO [] [StatisticFlushJob] [Thread-10] The 'Stat Flush' job has been cancelled
+2025-08-15 12:57:38,787 INFO [] [SyncTriggersJob] [Thread-10] The 'SyncTriggers' job has been cancelled
+2025-08-15 12:57:38,788 INFO [] [HeartbeatJob] [Thread-10] The 'Heartbeat' job has been cancelled
+2025-08-15 12:57:38,788 INFO [] [WatchdogJob] [Thread-10] The 'Watchdog' job has been cancelled
+2025-08-15 12:57:38,788 INFO [] [StageManagementJob] [Thread-10] The 'Stage Management' job has been cancelled
+2025-08-15 12:57:38,789 INFO [] [InitialLoadExtractorJob] [Thread-10] The 'Initial Load Extract' job has been cancelled
+2025-08-15 12:57:38,798 INFO [] [InitialLoadJob] [Thread-10] The 'Initial Load Queue' job has been cancelled
+2025-08-15 12:57:51,827 INFO [startup] [AbstractCommandLauncher] [main] Command: {}
+2025-08-15 12:57:51,921 INFO [startup] [AbstractCommandLauncher] [main] Option: name=engine, value={sucursal-001}
+2025-08-15 12:57:51,924 INFO [startup] [AbstractCommandLauncher] [main] Option: name=port, value={8081}
+2025-08-15 12:57:53,141 INFO [startup] [SymmetricUtils] [main] 
+   _____                              __       _       ____   _____
+  / ___/ __  _____ __  ___ __  ___  _/ /_ ____(_)___  / __ | / ___/
+  \__ \ / / / / _ `_ \/ _ `_ \/ _ \/_ __// __/ / __/ / / / / \__ \ 
+ ___/ // /_/ / // // / // // /  __// /  / / / / /_  / /_/ / ___/ / 
+/____/ \__  /_//_//_/_//_//_/\___/ \_/ /_/ /_/\__/ /_____/ /____/  
+      /____/                                                        
++-----------------------------------------------------------------+
+| Copyright (C) 2007-2025 JumpMind, Inc.                          |
+|                                                                 |
+| Licensed under the GNU General Public License version 3.        |
+| This software comes with ABSOLUTELY NO WARRANTY.                |
+| See http://www.gnu.org/licenses/gpl.html                        |
++-----------------------------------------------------------------+
+2025-08-15 12:57:53,152 INFO [startup] [SymmetricWebServer] [main] About to start SymmetricDS web server on 0.0.0.0:8081:HTTP/1.1 with context path /
+2025-08-15 12:57:56,184 INFO [startup] [SymmetricLauncher] [main] Starting SymmetricLauncher v3.16.5 using Java 24.0.2 with PID 7476 (C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\web\WEB-INF\lib\symmetric-server-3.16.5.jar started by Estudiante in C:\Users\Estudiante\Desktop\symmetric-server-3.16.5)
+2025-08-15 12:57:56,350 INFO [startup] [SymmetricLauncher] [main] No active profile set, falling back to 1 default profile: "default"
+2025-08-15 12:58:09,757 INFO [startup] [SymmetricEngineHolder] [main] Current directory is C:\Users\Estudiante\Desktop\symmetric-server-3.16.5
+2025-08-15 12:58:09,758 INFO [startup] [SymmetricEngineHolder] [main] Starting in single-server mode
+2025-08-15 12:58:10,301 INFO [sucursal-001] [ClientSymmetricEngine] [symmetric-engine-startup-1] Initializing connection to database
+2025-08-15 12:58:18,127 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] Detected database 'MySQL', version '8, minor version '0', protocol 'mysql'
+2025-08-15 12:58:18,398 INFO [sucursal-001] [JdbcDatabasePlatformFactory] [symmetric-engine-startup-1] The IDatabasePlatform being used is org.jumpmind.db.platform.mysql.MySqlDatabasePlatform
+2025-08-15 12:58:21,345 INFO [sucursal-001] [MySqlSymmetricDialect] [symmetric-engine-startup-1] The DbDialect being used is org.jumpmind.symmetric.db.mysql.MySqlSymmetricDialect
+2025-08-15 12:58:21,574 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-15 12:58:22,222 INFO [sucursal-001] [StagingManager] [symmetric-engine-startup-1] The staging directory was initialized at the following location: C:\Users\Estudiante\Desktop\symmetric-server-3.16.5\tmp\sucursal-001
+2025-08-15 12:58:23,105 INFO [startup] [SymmetricLauncher] [main] Started SymmetricLauncher in 28.972 seconds (process running for 41.039)
+2025-08-15 12:58:29,887 INFO [sucursal-001] [ExtensionService] [symmetric-engine-startup-1] Found 0 extension points from the database that will be registered
+2025-08-15 12:58:29,901 INFO [sucursal-001] [ClientExtensionService] [symmetric-engine-startup-1] Found 7 extension points from spring that will be registered
+2025-08-15 12:58:30,235 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Initializing SymmetricDS database
+2025-08-15 12:58:30,519 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Version matches for tables and objects
+2025-08-15 12:58:30,634 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Done initializing SymmetricDS database
+2025-08-15 12:58:30,637 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS database version : 3.16.5
+2025-08-15 12:58:30,638 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS software version : 3.16.5
+2025-08-15 12:58:30,717 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] Starting registered node [group=sucursal, id=sucursal-001, nodeId=sucursal-001]
+2025-08-15 12:58:30,730 INFO [sucursal-001] [ClusterService] [symmetric-engine-startup-1] This node picked a server id of DESKTOP-A01P1VB
+2025-08-15 12:58:30,751 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Synchronizing triggers
+2025-08-15 12:58:30,937 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: fix multiple active trigger histories took 19 ms
+2025-08-15 12:58:30,950 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get triggers for current node took 117 ms
+2025-08-15 12:58:30,951 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers started took 0 ms
+2025-08-15 12:58:30,952 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: get active trigger histories took 7 ms
+2025-08-15 12:58:30,952 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create ddl triggers took 0 ms
+2025-08-15 12:58:30,953 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: sync triggers ended took 0 ms
+2025-08-15 12:58:30,955 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: tables for trigger took 0 ms
+2025-08-15 12:58:30,965 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: drop trigger took 0 ms
+2025-08-15 12:58:30,967 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger inactivated took 0 ms
+2025-08-15 12:58:30,968 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: does trigger exist took 0 ms
+2025-08-15 12:58:30,969 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: inactivate trigger hist took 0 ms
+2025-08-15 12:58:30,969 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: update or create database trigger took 0 ms
+2025-08-15 12:58:30,970 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: trigger to table supporting info took 0 ms
+2025-08-15 12:58:31,020 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] SyncTriggers: table does not exist took 0 ms
+2025-08-15 12:58:31,037 INFO [sucursal-001] [TriggerRouterService] [symmetric-engine-startup-1] Done synchronizing triggers
+2025-08-15 12:58:31,166 INFO [sucursal-001] [RouterJob] [symmetric-engine-startup-1] Starting job 'Routing' on periodic schedule every 10000ms with the first run at 2025-08-15T12:58:34.195-0300
+2025-08-15 12:58:31,183 INFO [sucursal-001] [PushJob] [symmetric-engine-startup-1] Starting job 'Push' on periodic schedule every 10000ms with the first run at 2025-08-15T12:58:34.552-0300
+2025-08-15 12:58:31,196 INFO [sucursal-001] [PullJob] [symmetric-engine-startup-1] Starting job 'Pull' on periodic schedule every 10000ms with the first run at 2025-08-15T12:58:32.601-0300
+2025-08-15 12:58:31,203 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Push not configured for auto start
+2025-08-15 12:58:31,269 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Offline Pull not configured for auto start
+2025-08-15 12:58:31,352 INFO [sucursal-001] [OutgoingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Outgoing' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T16:00:00.000-0300
+2025-08-15 12:58:31,369 INFO [sucursal-001] [IncomingPurgeJob] [symmetric-engine-startup-1] Starting job 'Purge Incoming' on cron schedule '0 0 */4 * * *' with the first run at 2025-08-15T16:00:00.000-0300
+2025-08-15 12:58:31,404 INFO [sucursal-001] [StatisticFlushJob] [symmetric-engine-startup-1] Starting job 'Stat Flush' on cron schedule '0 0/5 * * * *' with the first run at 2025-08-15T13:00:00.000-0300
+2025-08-15 12:58:31,415 INFO [sucursal-001] [SyncTriggersJob] [symmetric-engine-startup-1] Starting job 'SyncTriggers' on cron schedule '0 0 0 * * *' with the first run at 2025-08-16T00:00:00.000-0300
+2025-08-15 12:58:31,418 INFO [sucursal-001] [HeartbeatJob] [symmetric-engine-startup-1] Starting job 'Heartbeat' on periodic schedule every 30000ms with the first run at 2025-08-15T12:58:39.826-0300
+2025-08-15 12:58:31,436 INFO [sucursal-001] [WatchdogJob] [symmetric-engine-startup-1] Starting job 'Watchdog' on periodic schedule every 3600000ms with the first run at 2025-08-15T12:58:32.507-0300
+2025-08-15 12:58:31,452 INFO [sucursal-001] [StageManagementJob] [symmetric-engine-startup-1] Starting job 'Stage Management' on cron schedule '0 0 * * * *' with the first run at 2025-08-15T13:00:00.000-0300
+2025-08-15 12:58:31,601 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Refresh Cache not configured for auto start
+2025-08-15 12:58:31,702 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Tracker not configured for auto start
+2025-08-15 12:58:31,798 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Pull not configured for auto start
+2025-08-15 12:58:31,867 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job File Sync Push not configured for auto start
+2025-08-15 12:58:31,933 INFO [sucursal-001] [InitialLoadExtractorJob] [symmetric-engine-startup-1] Starting job 'Initial Load Extract' on periodic schedule every 10000ms with the first run at 2025-08-15T12:58:41.129-0300
+2025-08-15 12:58:31,980 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Report Status not configured for auto start
+2025-08-15 12:58:31,987 INFO [sucursal-001] [JobManager] [symmetric-engine-startup-1] Job Log Miner not configured for auto start
+2025-08-15 12:58:32,002 INFO [sucursal-001] [InitialLoadJob] [symmetric-engine-startup-1] Starting job 'Initial Load Queue' on periodic schedule every 10000ms with the first run at 2025-08-15T12:58:40.157-0300
+2025-08-15 12:58:32,104 INFO [sucursal-001] [AbstractSymmetricEngine] [symmetric-engine-startup-1] SymmetricDS Node STARTED:
+	 nodeId=sucursal-001
+	 groupId=sucursal
+	 type=null
+	 subType=trigger-based
+	 name=sucursal-001
+	 softwareVersion=3.16.5
+	 databaseName=MySQL
+	 databaseVersion=8.0
+	 driverName=MySQL Connector/J
+	 driverVersion=mysql-connector-j-8.4.0 (Revision: 1c3f5c149e0bfe31c7fbeb24e2d260cd890972c4)
+	 uptime=0 sec.
+2025-08-15 12:58:32,682 INFO [sucursal-001] [NodeCommunicationService] [sucursal-001-job-2] pull will use 10 threads
+2025-08-15 12:58:34,251 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is running
+2025-08-15 12:58:34,281 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Querying data in gaps from database took 21 ms
+2025-08-15 12:58:34,282 INFO [sucursal-001] [DataGapFastDetector] [sucursal-001-job-3] Full gap analysis is done after 22 ms
+2025-08-15 13:00:00,046 INFO [sucursal-001] [StagingManager] [sucursal-001-job-8] Cleaning staging...
+2025-08-15 13:00:00,074 INFO [sucursal-001] [StagingManager] [sucursal-001-job-8] Finished cleaning staging in 0 seconds.
+2025-08-15 13:00:00,160 INFO [] [AbstractSymmetricEngine] [Thread-10] Stopping SymmetricDS externalId=sucursal-001 version=3.16.5 database=MySQL
+2025-08-15 13:00:00,161 INFO [] [RouterJob] [Thread-10] The 'Routing' job has been cancelled
+2025-08-15 13:00:00,162 INFO [] [PushJob] [Thread-10] The 'Push' job has been cancelled
+2025-08-15 13:00:00,162 INFO [] [PullJob] [Thread-10] The 'Pull' job has been cancelled
+2025-08-15 13:00:00,163 INFO [] [OutgoingPurgeJob] [Thread-10] The 'Purge Outgoing' job has been cancelled
+2025-08-15 13:00:00,163 INFO [] [IncomingPurgeJob] [Thread-10] The 'Purge Incoming' job has been cancelled
+2025-08-15 13:00:00,164 INFO [] [StatisticFlushJob] [Thread-10] The 'Stat Flush' job has been cancelled
+2025-08-15 13:00:00,164 INFO [] [SyncTriggersJob] [Thread-10] The 'SyncTriggers' job has been cancelled
+2025-08-15 13:00:00,164 INFO [] [HeartbeatJob] [Thread-10] The 'Heartbeat' job has been cancelled
+2025-08-15 13:00:00,165 INFO [] [WatchdogJob] [Thread-10] The 'Watchdog' job has been cancelled
+2025-08-15 13:00:00,165 INFO [] [StageManagementJob] [Thread-10] The 'Stage Management' job has been cancelled
+2025-08-15 13:00:00,167 INFO [] [InitialLoadExtractorJob] [Thread-10] The 'Initial Load Extract' job has been cancelled
+2025-08-15 13:00:00,167 INFO [] [InitialLoadJob] [Thread-10] The 'Initial Load Queue' job has been cancelled
