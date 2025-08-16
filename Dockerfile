@@ -47,8 +47,8 @@ RUN echo '#!/bin/bash' > /app/docker-entrypoint.sh && \
     echo 'mkdir -p /app/engines' >> /app/docker-entrypoint.sh && \
     echo 'cat > "$CONFIG_FILE" << EOF' >> /app/docker-entrypoint.sh && \
     echo 'engine.name=supabase-server' >> /app/docker-entrypoint.sh && \
-    echo 'group.id=sucursal' >> /app/docker-entrypoint.sh && \
-    echo 'external.id=sucursal-001' >> /app/docker-entrypoint.sh && \
+    echo 'group.id=master' >> /app/docker-entrypoint.sh && \
+    echo 'external.id=supabase-001' >> /app/docker-entrypoint.sh && \
     echo 'sync.url=${RENDER_EXTERNAL_URL}/sync/supabase-server' >> /app/docker-entrypoint.sh && \
     echo 'registration.url=${RENDER_EXTERNAL_URL}/sync/supabase-server' >> /app/docker-entrypoint.sh && \
     echo 'db.driver=org.postgresql.Driver' >> /app/docker-entrypoint.sh && \
