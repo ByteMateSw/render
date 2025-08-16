@@ -56,10 +56,10 @@ fi
 CONFIG_FILE="/app/engines/supabase-server.properties"
 mkdir -p /app/engines
 
-cat > "\$CONFIG_FILE" << CONFIG_EOF
+cat > "$CONFIG_FILE" << CONFIG_EOF
 engine.name=supabase-server
-group.id=master
-external.id=supabase-001
+group.id=sucursal
+external.id=sucursal-001
 sync.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
 registration.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
 
@@ -99,10 +99,10 @@ echo "✅ Configuración creada: \$CONFIG_FILE"
 # Crear configuración para sucursal-001 si hay variables MySQL
 if [ -n "\$MYSQL_HOST" ]; then
     SUCURSAL_CONFIG_FILE="/app/engines/sucursal-001.properties"
-    cat > "\$SUCURSAL_CONFIG_FILE" << SUCURSAL_CONFIG_EOF
+    cat > "$SUCURSAL_CONFIG_FILE" << SUCURSAL_CONFIG_EOF
 engine.name=sucursal-001
-group.id=store
-external.id=001
+group.id=sucursal
+external.id=sucursal-001
 
 # Database Configuration - Using Environment Variables
 db.driver=com.mysql.cj.jdbc.Driver
