@@ -49,13 +49,13 @@ if [ -n "\$MYSQL_HOST" ] && [ -z "\$MYSQL_USER" ]; then
 fi
 
 # Establecer valores por defecto
-PG_PORT=${PG_PORT:-5432}
-PG_DB=${PG_DB:-postgres}
+PG_PORT=\${PG_PORT:-5432}
+PG_DB=\${PG_DB:-postgres}
 
 # Establecer valores por defecto para MySQL
 if [ -n "\$MYSQL_HOST" ]; then
-    MYSQL_PORT=${MYSQL_PORT:-3306}
-    MYSQL_DB=${MYSQL_DB:-sucursal_001}
+    MYSQL_PORT=\${MYSQL_PORT:-3306}
+    MYSQL_DB=\${MYSQL_DB:-sucursal_001}
 fi
 
 echo "✅ Variables configuradas:"
