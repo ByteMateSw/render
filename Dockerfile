@@ -49,13 +49,13 @@ if [ -n "\$MYSQL_HOST" ] && [ -z "\$MYSQL_USER" ]; then
 fi
 
 # Establecer valores por defecto
-PG_PORT=\${PG_PORT:-5432}
-PG_DB=\${PG_DB:-postgres}
+PG_PORT=\$\{PG_PORT:-5432\}
+PG_DB=\$\{PG_DB:-postgres\}
 
 # Establecer valores por defecto para MySQL
 if [ -n "\$MYSQL_HOST" ]; then
-    MYSQL_PORT=\${MYSQL_PORT:-3306}
-    MYSQL_DB=\${MYSQL_DB:-sucursal_001}
+    MYSQL_PORT=\$\{MYSQL_PORT:-3306\}
+    MYSQL_DB=\$\{MYSQL_DB:-sucursal_001\}
 fi
 
 echo "✅ Variables configuradas:"
@@ -76,13 +76,13 @@ cat > "$CONFIG_FILE" << CONFIG_EOF
 engine.name=supabase-server
 group.id=sucursal
 external.id=sucursal-001
-sync.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
-registration.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
+sync.url=\$\{RENDER_EXTERNAL_URL\}/sync/supabase-server
+registration.url=\$\{RENDER_EXTERNAL_URL\}/sync/supabase-server
 
 db.driver=org.postgresql.Driver
-db.url=jdbc:postgresql://\${PG_HOST}:\${PG_PORT}/\${PG_DB}?sslmode=require&ssl=true&connectTimeout=30&socketTimeout=60
-db.user=\${PG_USER}
-db.password=\${PG_PASS}
+db.url=jdbc:postgresql://\$\{PG_HOST\}:\$\{PG_PORT\}/\$\{PG_DB\}?sslmode=require&ssl=true&connectTimeout=30&socketTimeout=60
+db.user=\$\{PG_USER\}
+db.password=\$\{PG_PASS\}
 
 db.pool.initial.size=2
 db.pool.max.size=10
@@ -101,7 +101,7 @@ start.heartbeat.job=true
 start.purge.job=true
 
 web.enable=true
-web.http.port=\${PORT}
+web.http.port=\$\{PORT\}
 web.context.path=/sync
 
 log.level=INFO
@@ -122,13 +122,13 @@ external.id=sucursal-001
 
 # Database Configuration - Using Environment Variables
 db.driver=com.mysql.cj.jdbc.Driver
-db.url=jdbc:mysql://\${MYSQL_HOST}:\${MYSQL_PORT}/\${MYSQL_DB}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-db.user=\${MYSQL_USER}
-db.password=\${MYSQL_PASS}
+db.url=jdbc:mysql://\$\{MYSQL_HOST\}:\$\{MYSQL_PORT\}/\$\{MYSQL_DB\}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.user=\$\{MYSQL_USER\}
+db.password=\$\{MYSQL_PASS\}
 
 # Sync Configuration - Client connects to server
-sync.url=\${RENDER_EXTERNAL_URL}/sync/sucursal-001
-registration.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
+sync.url=\$\{RENDER_EXTERNAL_URL\}/sync/sucursal-001
+registration.url=\$\{RENDER_EXTERNAL_URL\}/sync/supabase-server
 
 # Client Configuration
 auto.registration=true
@@ -183,7 +183,7 @@ bin/symadmin --engine supabase-server create-sym-tables 2>/dev/null || echo "Tab
 
 echo "🚀 Iniciando servicio SymmetricDS..."
 # Usar sym directamente
-exec bin/sym --engine supabase-server --port \${PORT}
+exec bin/sym --engine supabase-server --port \$\{PORT\}
 
 EOF
 
