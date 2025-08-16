@@ -77,7 +77,7 @@ Auto-Deploy: Yes
 ### 🔑 Variables OBLIGATORIAS:
 
 ```bash
-# Base de Datos PostgreSQL
+# Base de Datos PostgreSQL (para nodo maestro)
 PG_HOST=tu-postgres-host.com
 PG_PORT=5432
 PG_DB=nombre_base_datos
@@ -89,6 +89,17 @@ JAVA_OPTS=-Xmx512m -Xms256m -Djava.awt.headless=true
 
 # Puerto (automático en Render.com)
 PORT=8080
+```
+
+### 🏪 Variables OPCIONALES para Sucursales MySQL:
+
+```bash
+# Base de Datos MySQL (para sucursales)
+MYSQL_HOST=tu-mysql-host.com
+MYSQL_PORT=3306
+MYSQL_DB=sucursal_001
+MYSQL_USER=tu_usuario_mysql
+MYSQL_PASS=tu_password_mysql
 ```
 
 ### 🌍 Variables OPCIONALES:
