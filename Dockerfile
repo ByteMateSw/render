@@ -9,7 +9,6 @@ ENV JAVA_OPTS="-Xmx512m -Xms256m -Djava.awt.headless=true"
 ENV SYMMETRIC_HOME="/app"
 ENV PORT=8080
 ENV PG_PORT=5432
-ENV MYSQL_PORT=3306
 
 # Instalar dependencias
 RUN apt-get update && apt-get install -y \
@@ -42,31 +41,15 @@ if [ -z "\$PG_HOST" ] || [ -z "\$PG_USER" ] || [ -z "\$PG_PASS" ]; then
     exit 1
 fi
 
-# Validar variables MySQL si están presentes
-if [ -n "\$MYSQL_HOST" ] && [ -z "\$MYSQL_USER" ]; then
-    echo "❌ ERROR: MYSQL_HOST definido pero MYSQL_USER faltante"
-    exit 1
-fi
-
 # Establecer valores por defecto
-PG_PORT=\${PG_PORT:-5432}
-PG_DB=\${PG_DB:-postgres}
-
-# Establecer valores por defecto para MySQL
-if [ -n "\$MYSQL_HOST" ]; then
-    MYSQL_PORT=\${MYSQL_PORT:-3306}
-    MYSQL_DB=\${MYSQL_DB:-sucursal_001}
-fi
+export PG_PORT=\${PG_PORT:-5432}
+export PG_DB=\${PG_DB:-postgres}
 
 echo "✅ Variables configuradas:"
 echo "   - PG_HOST: \$PG_HOST"
 echo "   - PG_USER: \$PG_USER"
 echo "   - PORT: \$PORT"
 echo "   - RENDER_EXTERNAL_URL: \$RENDER_EXTERNAL_URL"
-if [ -n "\$MYSQL_HOST" ]; then
-    echo "   - MYSQL_HOST: \$MYSQL_HOST"
-    echo "   - MYSQL_USER: \$MYSQL_USER"
-fi
 
 # Crear configuración
 CONFIG_FILE="/app/engines/supabase-server.properties"
@@ -111,64 +94,6 @@ auto.config.registration=true
 CONFIG_EOF
 
 echo "✅ Configuración creada: \$CONFIG_FILE"
-
-# Crear configuración para sucursal-001 si hay variables MySQL
-if [ -n "\$MYSQL_HOST" ]; then
-    SUCURSAL_CONFIG_FILE="/app/engines/sucursal-001.properties"
-    cat > "$SUCURSAL_CONFIG_FILE" << SUCURSAL_CONFIG_EOF
-engine.name=sucursal-001
-group.id=sucursal
-external.id=sucursal-001
-
-# Database Configuration - Using Environment Variables
-db.driver=com.mysql.cj.jdbc.Driver
-db.url=jdbc:mysql://\${MYSQL_HOST}:\${MYSQL_PORT}/\${MYSQL_DB}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-db.user=\${MYSQL_USER}
-db.password=\${MYSQL_PASS}
-
-# Sync Configuration - Client connects to server
-sync.url=\${RENDER_EXTERNAL_URL}/sync/sucursal-001
-registration.url=\${RENDER_EXTERNAL_URL}/sync/supabase-server
-
-# Client Configuration
-auto.registration=true
-auto.reload=true
-start.push.job=true
-start.pull.job=true
-start.route.job=true
-start.purge.job=true
-start.heartbeat.job=true
-start.synctriggers.job=true
-start.watchdog.job=true
-start.refresh.cache.job=true
-start.file.sync.tracker.job=true
-start.file.sync.push.job=true
-start.file.sync.pull.job=true
-start.stat.flush.job=true
-start.offline.push.job=true
-start.offline.pull.job=true
-start.initial.load.extract.job=true
-
-# Logging
-log4j2.logger.symmetric.name=org.jumpmind.symmetric
-log4j2.logger.symmetric.level=INFO
-log4j2.logger.symmetric.additivity=false
-log4j2.logger.symmetric.appenderRef.symmetric.ref=SYMMETRIC
-
-# Performance
-jmx.agent.enable=true
-cluster.lock.enabled=false
-
-# Data Gap Detection
-data.gap.fast.detector.enabled=true
-data.gap.fast.detector.threshold=50000
-
-# Batch Processing
-routing.largest.gap.size=50000000
-SUCURSAL_CONFIG_EOF
-
-    echo "✅ Configuración sucursal-001 creada: \$SUCURSAL_CONFIG_FILE"
-fi
 
 # Configurar entorno
 export SYMMETRIC_HOME="/app"
