@@ -42,6 +42,22 @@ if [ -z "\$PG_HOST" ] || [ -z "\$PG_USER" ] || [ -z "\$PG_PASS" ]; then
     exit 1
 fi
 
+# Validar variables MySQL si están presentes
+if [ -n "\$MYSQL_HOST" ] && [ -z "\$MYSQL_USER" ]; then
+    echo "❌ ERROR: MYSQL_HOST definido pero MYSQL_USER faltante"
+    exit 1
+fi
+
+# Establecer valores por defecto
+PG_PORT=${PG_PORT:-5432}
+PG_DB=${PG_DB:-postgres}
+
+# Establecer valores por defecto para MySQL
+if [ -n "\$MYSQL_HOST" ]; then
+    MYSQL_PORT=${MYSQL_PORT:-3306}
+    MYSQL_DB=${MYSQL_DB:-sucursal_001}
+fi
+
 echo "✅ Variables configuradas:"
 echo "   - PG_HOST: \$PG_HOST"
 echo "   - PG_USER: \$PG_USER"
